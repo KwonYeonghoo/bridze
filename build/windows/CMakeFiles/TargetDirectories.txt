@@ -1,0 +1,16 @@
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/CMakeFiles/INSTALL.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/flutter/CMakeFiles/INSTALL.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/runner/CMakeFiles/bridze.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/runner/CMakeFiles/INSTALL.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/audioplayers_windows/CMakeFiles/audioplayers_windows_plugin.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/audioplayers_windows/CMakeFiles/INSTALL.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/audioplayers_windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/record_windows/CMakeFiles/record_windows_plugin.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/record_windows/CMakeFiles/INSTALL.dir
+C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/plugins/record_windows/CMakeFiles/ALL_BUILD.dir

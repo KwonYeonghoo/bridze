@@ -1,0 +1,49 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/nuget-populate"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/4b07f4dd91b7a7db3fcebec8a4a94049/nuget-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/f95c5f039e7af7104970aed22ef90fe7/nuget-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-copyfile.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Noah/Desktop/bridze0731/BridZe/build/windows/_deps/nuget-subbuild/CMakeFiles/b66ecfdfb1949464223733d36b8c602e/nuget-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nuget-populate"
+		],
+		"name" : "nuget-populate"
+	}
+}
