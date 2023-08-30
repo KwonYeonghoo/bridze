@@ -3,21 +3,27 @@
 ## 📝 베트남 다문화 아이들의 언어 및 정서 평가, 기관 연결 플랫폼
 ---
 
+### Model
+<p>
+   
+</p>
 
 ### Front-end
 <p>
    <img src="https://img.shields.io/badge/Flutter-02569B.svg?style=for-the-badge&logo=Flutter&logoColor=white">
+</p>
    
 ### Back-end
 <p>
    <img src="https://img.shields.io/badge/Flask-02569B.svg?style=for-the-badge&logo=Flask&logoColor=white">
    <img src="https://img.shields.io/badge/Goorm-02569B.svg?style=for-the-badge&logo=Goorm&logoColor=white">
+</p>
 
 ### Communication
 <p>
   <img src="https://img.shields.io/badge/Google Meet-00897B.svg?style=for-the-badge&logo=Google Meet&logoColor=white">
   <img src="https://img.shields.io/badge/Notion-000000.svg?style=for-the-badge&logo=Notion&logoColor=white">
-  </p>
+</p>
   
 ### Version Control
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
