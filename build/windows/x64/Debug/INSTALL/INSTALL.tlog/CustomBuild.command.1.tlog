@@ -1,0 +1,10 @@
+^C:\USERS\NOAH\DESKTOP\BRIDZE0731\BRIDZE\BUILD\WINDOWS\CMAKEFILES\9D4B6BE47875BD9895597C7C80E6CF35\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
