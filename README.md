@@ -54,7 +54,7 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 |8 - 10세|100 ~ 91|90 ~ 73|72 ~ 0|
 |11세 - 13세|100 ~ 97|96 ~ 76|75~ 0|
 
-- 모델 연결 위치 : "https://github.com/BridZe/bridze/tree/master/backend" (참고)
+- 모델 연결 위치 : https://github.com/BridZe/bridze/tree/master/backend (참고)
 
 
 ### Contributors 👩‍💻👨‍💻
