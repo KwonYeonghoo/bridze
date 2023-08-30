@@ -18,13 +18,13 @@
 
 ## 3. 얼굴 및 감정 인식 (Mediapipe + VGGNet)
 
-이 모듈은 이미지에서 얼굴을 감지하고, 감지된 얼굴의 감정을 예측합니다. 이를 위해 Mediapipe를 사용하여 얼굴 감지를 수행하고, 사전에 학습된 VGGNet 모델을 활용하여 감정을 예측합니다.
+이미지에서 얼굴을 감지하고, 감지된 얼굴의 감정을 예측합니다. 이를 위해 Mediapipe를 사용하여 얼굴 감지를 수행하고, 사전에 학습된 VGGNet 모델을 활용하여 감정을 예측합니다.
 
 - 학습 모델 파일: `/backend/facial_emotion_recognition/vggnet_weight.h5`
 - 모델 실행 위치: `/backend/facial_emotion_recognition/model_cv.py`
 
 ## 4. 동영상 프레임 추출
 
-이 코드는 OpenCV를 사용하여 동영상 파일을 읽고 지정된 간격으로 프레임을 추출하여 이미지로 저장합니다. 주어진 경로에 있는 동영상 파일을 사용하며, 추출된 프레임은 `frames` 폴더에 저장됩니다.
+OpenCV를 사용하여 동영상 파일을 읽고 지정된 간격으로 프레임을 추출하여 이미지로 저장합니다. 주어진 경로에 있는 동영상 파일을 사용하며, 추출된 프레임은 `frames` 폴더에 저장됩니다.
 
 - 알고리즘 실행 위치: `/backend/videos/video2frame.py`
