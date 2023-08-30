@@ -40,6 +40,20 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 
 ![서비스 흐름도](https://github.com/BridZe/bridze/assets/89845380/97583ad6-c8ad-4aa0-af2b-944b46edbca5)
 
+## 언어 평가 과정
+
+![stt](https://github.com/BridZe/bridze/assets/89845380/35c4dec5-07cc-4e7d-9bd4-0d896e6d0472)
+
+아동의 나이에 맞는 수준의 지정 발화를 읽어 Flutter 내에서 음성 녹음을 진행한다. 음성이 녹음되면 해당 음성 파일은 whisper 모델 안에서 전처리와 토큰화를 거쳐 텍스트로 전사되고 정답셋과 비교하여 글자 단위 비교 알고리즘인 CRR 알고리즘을 통해 100점 만점으로 환산되어 점수를 받게 된다. 받은 점수는 AI HUB의 한국어 아동 음성 데이터, 어린이 음성 데이터를 통해 계산된 통계 기반 임계치로 상, 중, 하로 결과를 받게 된다.
+
+임계치
+나이|상|중|하|
+|---|---|---|
+5세 - 7세 |100 ~ 88|87 ~ 69|68 ~ 0|
+8 - 10세 |100 ~ 91|90 ~ 73|72 ~ 0|
+11세 - 13세 |100 ~ 97|96 ~ 76|75~ 0|
+
+
 ### Contributors 👩‍💻👨‍💻
 <a href="https://github.com/chaenni0312"><img src="https://img.shields.io/badge/chaenni0312-black?style=social-square&logo=github&logoColor=white"/></a>
 <a href="https://github.com/KwonYeonghoo"><img src="https://img.shields.io/badge/KwonYeonghoo-black?style=social-square&logo=github&logoColor=white"/></a>
