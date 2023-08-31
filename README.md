@@ -82,7 +82,7 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 ---
 # 환경 설정
 
-## Whisper
+## Whisper 실행 환경
 - Whisper fined tune 코드 : `data_STT, CV/Whisper_finetuned/Whisper_코드.ipynb`
 - Whisper fine tuning에 사용된 데이터셋 : 인공지능 학습을 위한 외국인 한국어 발화 음성 데이터의 베트남 도메인 19만 데이터
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=505)에서 다운이 가능합니다.
@@ -95,7 +95,7 @@ pipe(audio_file)['text']
 위와 같이 모델을 불러 사용할 수 있습니다.
 ```
 ---
-## SEvggnet
+## SEvggnet 실행 환경
 - SEvggnet fined tune 코드 :
 - SEvggnet fine tuning에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
    - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
