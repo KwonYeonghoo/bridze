@@ -46,22 +46,18 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
  ┃ ┣ 📂Whisper_trained_model
  ┃ ┃ ┣ 📜.gitattributes
  ┃ ┃ ┣ 📜.gitignore
- ┃ ┃ ┣ 📜added_tokens.json
- ┃ ┃ ┣ 📜config.json
- ┃ ┃ ┣ 📜generation_config.json
- ┃ ┃ ┣ 📜merges.txt
- ┃ ┃ ┣ 📜normalizer.json
- ┃ ┃ ┣ 📜preprocessor_config.json
- ┃ ┃ ┣ 📜pytorch_model.bin
- ┃ ┃ ┣ 📜README.md
- ┃ ┃ ┣ 📜special_tokens_map.json
- ┃ ┃ ┣ 📜tokenizer_config.json
- ┃ ┃ ┣ 📜training_args.bin
+                . . .
  ┃ ┃ ┣ 📜vocab.json
  ┃ ┃ ┗ 📂runs
  ┃ ┣ 📜=0.30
  ┃ ┣ 📜=2.6.1
  ┃ ┗ 📜Whisper_코드.ipynb
+```
+```
+fine tuning된 Whisper 모델입니다.
+Hugging Face에서 API형태로 언제든 불러 쓸 수 있습니다.
+```
+```
  ┗ 📂Whisper용 원천 데이터(샘플 100개)
  ┃ ┣ 📂라벨링 데이터(샘플 100개)
  ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
@@ -75,6 +71,11 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
                  . . .
  ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.wav
  ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.wav
+```
+```
+AI Hub에서 제공한 외국인의 한국어 발화 데이터셋입니다.
+'https://aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=505'에서 다운로드 가능합니다.
+데이터의 수가 10만개가 넘어가 100개씩만 업로드하였습니다.
 ```
 ---
 # SEvggnet 파일 트리
