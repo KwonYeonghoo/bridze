@@ -49,6 +49,10 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 |BridZe fine tuned vggnet|82.6|
 |BridZe fine tuned SEvggnet|.|
 ---
+
+## 모델과 서비스 연결
+
+---
 ## 서비스 흐름도
 
 ![서비스 흐름도](https://github.com/BridZe/bridze/assets/89845380/97583ad6-c8ad-4aa0-af2b-944b46edbca5)
