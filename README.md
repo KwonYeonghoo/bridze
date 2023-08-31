@@ -37,6 +37,9 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 
 ---
 # 환경 설정
+- whisper fined tune 코드 : `data_STT, CV/Whisper_finetuned/Whisper_코드.ipynb`
+- whisper 구동 환경 : pytorch , cuda 를 다운로드합니다.
+- whisper 사용 방법 (데이터 불러오기) :
 
 ---
 
