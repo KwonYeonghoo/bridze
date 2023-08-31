@@ -114,6 +114,9 @@ pipe(audio_file)['text']
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
 - SEvggnet 구동 환경 :
 - SEvggnet 사용 방법 (데이터 불러오기) :
+
+
+## 개발 환경
 ---
 
 # 최종 모델 성능 결과
