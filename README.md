@@ -51,12 +51,23 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
  ┃ ┃ ┗ 📂runs
  ┃ ┣ 📜=0.30
  ┃ ┣ 📜=2.6.1
- ┃ ┗ 📜Whisper_코드.ipynb
 ```
 ```
 fine tuning된 Whisper 모델입니다.
 Hugging Face에서 API형태로 언제든 불러 쓸 수 있습니다.
 ```
+```
+ ┃ ┗ 📜Whisper_코드.ipynb
+```
+```
+fine tuning을 진행한 코드입니다.
+fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드는 모두 건너뛰고 중간의
+`loaded_dataset_dict = DatasetDict.load_from_disk("/content/drive/MyDrive/bridze_data")`
+이 코드부터 실행하시면 됩니다. (경로는 저장위치에 맞게 수정하시면 됩니다.)
+```
+- bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다.
+   - bridze data는 whisper모델에 투입하여 훈련할 수 있도록 가공이 완료된 데이터셋입니다.    
+
 ```
  ┗ 📂Whisper용 원천 데이터(샘플 100개)
  ┃ ┣ 📂라벨링 데이터(샘플 100개)
