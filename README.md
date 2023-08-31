@@ -123,6 +123,7 @@ pipe(audio_file)['text']
 |BridZe fine tuned whisper|92.7|
 |vggnet|.|
 |BridZe fine tuned SEvggnet|.|
+- openai whisper과 vggnet은 기존에 공개된 오픈 소스 코드의 정확도이며 BridZe fine tuned whisper과 BridZe fine tuned SEvggnet은 저희 팀이 직접 fine tuning하여 목적에 맞게 새로이 구축된 모델의 정확도입니다.
 
 # whisper 성능 결과
 |step|training loss|validation loss|cer(글자 단위 오류율)|
