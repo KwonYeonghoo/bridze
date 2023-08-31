@@ -37,7 +37,7 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 
 
 ---
-# Whisper file tree
+# Whisper 파일 트리
 ```
 📦data_STT, CV
  ┣ 📂Whisper_finetuned
@@ -80,6 +80,8 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 
 ---
 # 환경 설정
+
+## whisper
 - whisper fined tune 코드 : `data_STT, CV/Whisper_finetuned/Whisper_코드.ipynb`
 - whisper fine tuning에 사용된 데이터셋 : 인공지능 학습을 위한 외국인 한국어 발화 음성 데이터의 베트남 도메인 19만 데이터
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=505)에서 다운이 가능합니다.
@@ -87,6 +89,9 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
    - 설치 방법 참조 : https://pytorch.org/get-started/previous-versions/
 - whisper 사용 방법 (데이터 불러오기) : Hugging face에 fine-tuning 완료된 모델을 올려놓았기 때문에 API로 언제든 불러다 쓸 수 있지만, fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드는 모두 건너뛰고 중간의 `loaded_dataset_dict = DatasetDict.load_from_disk("/content/drive/MyDrive/bridze_data")` 이 코드부터 실행하시면 됩니다. (경로는 저장위치에 맞게 수정하시면 됩니다.)
    - bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다.
+
+## SEvggnet
+- vggnet fined tune 코드 : 
 ---
 
 # 모델 성능 결과
