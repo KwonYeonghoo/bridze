@@ -49,12 +49,16 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
  ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.csv
  ┃ ┗ 📂오디오 파일(샘플 100개)
  ┃ ┃ 경
+---
+
 - SEvggnet fined tune 코드 :
 - SEvggnet fine tuning에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
    - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
 - SEvggnet 구동 환경 :
 - SEvggnet 사용 방법 (데이터 불러오기) :
+
+---
 
 
 ## 개발 환경
