@@ -35,12 +35,55 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 
 다문화가정 아동 혹은 한국 아동을 위한 언어 교육 기관과 심리 상담 기관은 국내에 많이 존재하고 있습니다. 그러나 한국 가정 부모님들과 달리 다문화가정 부모님들은 이러한 자원을 활용하기 위한 아동 관찰 및 정보 찾기를 통한 문제 해결이 어렵습니다. 따라서 다문화가정 아동들도 한국 아동들과 동일하게 제대로 된 환경에서 성장할 수 있도록 정보 소외 대상자인 이들이 아동을 직접 오랜 시간 관찰하고 정보를 찾아보지 않고도 기관을 이용할 수 있도록 BridZe 서비스가 개발되어야합니다.
 
+
+---
+# Whisper file tree
+```
+📦data_STT, CV
+ ┣ 📂Whisper_finetuned
+ ┃ ┣ 📂flagged
+ ┃ ┣ 📂git-lfs-3.4.0(파일 생략)
+ ┃ ┣ 📂Whisper_trained_model
+ ┃ ┃ ┣ 📜.gitattributes
+ ┃ ┃ ┣ 📜.gitignore
+ ┃ ┃ ┣ 📜added_tokens.json
+ ┃ ┃ ┣ 📜config.json
+ ┃ ┃ ┣ 📜generation_config.json
+ ┃ ┃ ┣ 📜merges.txt
+ ┃ ┃ ┣ 📜normalizer.json
+ ┃ ┃ ┣ 📜preprocessor_config.json
+ ┃ ┃ ┣ 📜pytorch_model.bin
+ ┃ ┃ ┣ 📜README.md
+ ┃ ┃ ┣ 📜special_tokens_map.json
+ ┃ ┃ ┣ 📜tokenizer_config.json
+ ┃ ┃ ┣ 📜training_args.bin
+ ┃ ┃ ┣ 📜vocab.json
+ ┃ ┃ ┗ 📂runs
+ ┃ ┣ 📜=0.30
+ ┃ ┣ 📜=2.6.1
+ ┃ ┗ 📜Whisper_코드.ipynb
+ ┗ 📂Whisper용 원천 데이터(샘플 100개)
+ ┃ ┣ 📂라벨링 데이터(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.csv
+                 . . .
+ ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.csv
+ ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.csv
+ ┃ ┗ 📂오디오 파일(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.wav
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.wav
+                 . . .
+ ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.wav
+ ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.wav
+```
+---
+
 ---
 # 환경 설정
 - whisper fined tune 코드 : `data_STT, CV/Whisper_finetuned/Whisper_코드.ipynb`
 - whisper 구동 환경 : pytorch , cuda 를 설치합니다. 'https://pytorch.org/get-started/previous-versions/'
-- whisper 사용 방법 (데이터 불러오기) :
-
+- whisper 사용 방법 (데이터 불러오기) : Hugging face에 fine-tuning 완료된 모델을 올려놓았기 때문에 API로 언제든 불러다 쓸 수 있지만, fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드는 모두 건너뛰고 중간의 `loaded_dataset_dict = DatasetDict.load_from_disk("/content/drive/MyDrive/bridze_data")` 이 코드부터 실행하시면 됩니다. (경로는 저장위치에 맞게 수정하시면 됩니다.)
+   - bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다. 
 ---
 
 # 모델 성능 결과
