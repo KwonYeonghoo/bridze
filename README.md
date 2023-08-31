@@ -121,8 +121,6 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 |vggnet|.|
 |BridZe fine tuned SEvggnet|.|
 
-##whisper 성능 결과
-
 ---
 
 # 모델과 서비스 연결
