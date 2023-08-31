@@ -49,7 +49,7 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 ```
 AI Hub에서 제공한 외국인의 한국어 발화 데이터셋입니다.
 'https://aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=505'에서 다운로드 가능합니다.
-데이터의 수가 10만개가 넘어가 100개씩만 업로드하였습니다.
+데이터의 수가 19만개가 넘어가 100개씩만 업로드하였습니다.
 ```
 ```
 ┣ 📂Whisper_finetuned
