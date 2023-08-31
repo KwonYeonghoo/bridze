@@ -3,6 +3,40 @@
 백엔드(flask)에서는 프론트엔드(flutter)와 상호작용하며 음성 및 이미지 데이터 관련 다양한 작업을 처리합니다. 음성을 텍스트로 변환하는(STT) 기능, Character Recognition Rate (CRR) 점수 산정, 비디오 프레임 추출, 이미지 감정 분석 등의 기능을 지원합니다.
 - flask 파일 위치: `/bridze/backend/application.py`
 
+## 백엔드 디렉토리 구조
+```
+backend
+ ┣ facial_emotion_recognition
+ ┃ ┣ inference
+ ┃ ┃ ┣ angry
+ ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┃ ┣ fear
+ ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┃ ┣ happy
+ ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┃ ┣ neutral
+ ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┃ ┗ sad
+ ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┣ model_cv.py
+ ┃ ┗ vggnet_weight.h5
+ ┣ stt
+ ┃ ┣ crr.py
+ ┃ ┣ Jijeong.py
+ ┃ ┣ model_stt.py
+ ┃ ┗ test.flac
+ ┣ videos
+ ┃ ┣ chart
+ ┃ ┃ ┗ picture.jpg
+ ┃ ┣ video1.mp4
+ ┃ ┣ video2.mp4
+ ┃ ┣ video2frame.py
+ ┃ ┗ video3.mp4
+ ┣ application.py
+ ┣ README.md
+ ┗ requirements.txt
+```
+
 ## 1. 음성 데이터 텍스트 변환 (Whisper)
 
 음성 데이터를 텍스트 데이터로 변환합니다. 해당 기능은 Hugging Face에 업로드한 모델 API를 받아 사용합니다. 
