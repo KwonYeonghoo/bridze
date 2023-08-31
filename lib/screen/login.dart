@@ -1,4 +1,4 @@
-import 'package:bridze/screen/calendart.dart';
+import 'package:bridze/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,7 +20,9 @@ class _LoginPageState extends State<LoginPage> {
       // Successful login, navigate to the next screen or perform any other action
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const CalendarApp()),
+        MaterialPageRoute(
+          builder: (context) => const DiagnosisScreen(),
+        ),
       );
     } else {
       // Failed login, show an error message or perform any other action

@@ -2,18 +2,18 @@ import 'package:bridze/screen/diagnosis_5/diagnosis_kid_5_2.dart';
 import 'package:flutter/material.dart';
 
 class FivePage extends StatefulWidget {
-  const FivePage({Key? key}) : super(key: key);
+  final String name;
+
+  const FivePage({Key? key, required this.name}) : super(key: key);
 
   @override
-  State<FivePage> createState() => _FivePageState();
+  State<FivePage> createState() => FivePageState();
 }
 
-class _FivePageState extends State<FivePage> {
+class FivePageState extends State<FivePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(
-          238, 243, 246, 1), // Set the background color to light blue
       body: Stack(
         children: [
           Image.asset(
@@ -37,7 +37,7 @@ class _FivePageState extends State<FivePage> {
                     ),
                     const SizedBox(width: 10),
                     const Text(
-                      "Bước 2",
+                      "đánh giá ngôn ngữ",
                       style: TextStyle(
                         fontSize: 40,
                         fontFamily: 'Rowdies',
@@ -46,11 +46,11 @@ class _FivePageState extends State<FivePage> {
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 40, top: 30),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, top: 30),
                 child: Text(
-                  "첫 번째 언어적 진단을 시작합니다.\n화면에 나오는 문장을 아이가 그대로 읽어주세요 ",
-                  style: TextStyle(
+                  "${widget.name} 어린이의 언어 평가를 시작합니다.\n화면에 나오는 문장을 아이가 그대로 읽어주세요 ~",
+                  style: const TextStyle(
                     fontSize: 40,
                     fontFamily: 'BMJUA',
                     color: Color(0xff000000),
@@ -60,9 +60,9 @@ class _FivePageState extends State<FivePage> {
               const Padding(
                 padding: EdgeInsets.only(left: 40, top: 30),
                 child: Text(
-                  "Bắt đầu chẩn đoán ngôn ngữ đầu tiên.\nEm bé đọc y chang câu trên màn hình đi ",
+                  "Bắt đầu đánh giá ngôn ngữ.\nEm bé đọc y chang câu trên màn hình đi",
                   style: TextStyle(
-                    fontFamily: 'Rowdies',
+                    fontFamily: 'Sriracha',
                     fontSize: 40,
                     color: Color(0xff8EB5FF),
                   ),
@@ -79,11 +79,12 @@ class _FivePageState extends State<FivePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const FiveReadPage(),
+                            builder: (context) => const FiveRead2Page(),
                           ),
                         );
                       },
-                      child: Image.asset("assets/images/cursor.png"),
+                      child: Image.asset("assets/images/cursor.png",
+                          width: 100, height: 100),
                     ),
                   ),
                 ),

@@ -23,7 +23,7 @@ class DiagnosisMother1Page extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 const Text(
-                  "Bước 1",
+                  "đánh giá ngôn ngữ",
                   style: TextStyle(
                     fontSize: 40,
                     fontFamily: 'Rowdies',
@@ -35,7 +35,7 @@ class DiagnosisMother1Page extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(left: 40, top: 30),
             child: Text(
-              "첫 번째 언어적 진단을 시작합니다.\n화면에 나오는 문장을 부모님이 읽어주세요",
+              "언어 평가를 시작합니다.\n화면에 나오는 문장을 부모님이 읽어주세요",
               style: TextStyle(
                 fontSize: 40,
                 fontFamily: 'BMJUA',
@@ -46,7 +46,7 @@ class DiagnosisMother1Page extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(left: 40, top: 30),
             child: Text(
-              "Bắt đầu chẩn đoán ngôn ngữ đầu tiên.\nBa mẹ hãy đọc lại những câu trên màn hình đi ạ ",
+              "Bắt đầu đánh giá ngôn ngữ.\nBa mẹ hãy đọc lại những câu trên màn hình đi ạ",
               style: TextStyle(
                 fontSize: 40,
                 fontFamily: 'Sriracha',
@@ -68,7 +68,11 @@ class DiagnosisMother1Page extends StatelessWidget {
                             builder: (context) =>
                                 const DiagnosisMother2Page()));
                   },
-                  child: Image.asset("assets/images/arrows.png"),
+                  child: Image.asset(
+                    "assets/images/arrows.png",
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
               ),
             ),

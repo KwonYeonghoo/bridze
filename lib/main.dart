@@ -1,10 +1,23 @@
+import 'package:bridze/provider/face_evaluation.dart';
+import 'package:bridze/provider/institution_recommended.dart';
 import 'package:bridze/screen/diagnosis.dart';
 import 'package:bridze/screen/home.dart';
 import 'package:bridze/screen/login.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      // MultiProvider로 여러 Provider 관리
+      providers: [
+        ChangeNotifierProvider(
+            create: (context) => TotalScoreProvider()), // 기존 Provider
+        ChangeNotifierProvider(create: (context) => AppData()), // 새로운 Provider
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -67,7 +80,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  '다문화가정 아이들을 세상으로 잇다',
+                  '다문화가정 아동들을 세상으로 잇다',
                   style: TextStyle(
                     fontSize: 50,
                     fontFamily: 'BMJUA',
@@ -90,7 +103,7 @@ class HomePage extends StatelessWidget {
                       const SizedBox(width: 120),
                       buildIconButton(
                         icon: Icons.favorite,
-                        label: '진단',
+                        label: '평가',
                         onPressed: () {
                           Navigator.pushNamed(context, '/diagnosis');
                         },
