@@ -9,11 +9,11 @@ class DiagnosisKidPage extends StatefulWidget {
 }
 
 class _DiagnosisKidPageState extends State<DiagnosisKidPage> {
-  final TextEditingController _nameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   @override
   void dispose() {
-    _nameController.dispose();
+    nameController.dispose();
     super.dispose();
   }
 
@@ -43,7 +43,7 @@ class _DiagnosisKidPageState extends State<DiagnosisKidPage> {
                     ),
                     const SizedBox(width: 10),
                     const Text(
-                      "Bước 1",
+                      "Nhập thông tin",
                       style: TextStyle(
                         fontFamily: 'Rowdies',
                         fontSize: 40,
@@ -55,7 +55,7 @@ class _DiagnosisKidPageState extends State<DiagnosisKidPage> {
               const Padding(
                 padding: EdgeInsets.only(left: 40, top: 30),
                 child: Text(
-                  "아이의 기본 정보를 입력해주세요!",
+                  "아이의 기본 정보를 입력해주세요 !",
                   style: TextStyle(
                     fontFamily: 'BMJUA',
                     fontSize: 40,
@@ -90,24 +90,26 @@ class _DiagnosisKidPageState extends State<DiagnosisKidPage> {
                           ),
                         ),
                         const SizedBox(width: 10),
-                        Expanded(
+                        Flexible(
                           child: TextFormField(
-                            controller: _nameController,
+                            controller: nameController,
                             style: const TextStyle(
                               fontSize: 20,
                             ),
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 10,
+                                horizontal: 10,
+                                vertical: 5,
                               ),
-                              filled: true,
                               fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
                                 borderSide: BorderSide.none,
                               ),
                             ),
+                            onChanged: (value) {
+                              setState(() {});
+                            },
                           ),
                         ),
                       ],
@@ -115,17 +117,17 @@ class _DiagnosisKidPageState extends State<DiagnosisKidPage> {
                     const SizedBox(
                       height: 40,
                     ),
-                    const Row(
+                    Row(
                       children: <Widget>[
-                        Text(
+                        const Text(
                           '나이 :',
                           style: TextStyle(
                             fontFamily: 'BMJUA',
                             fontSize: 40,
                           ),
                         ),
-                        SizedBox(width: 30),
-                        DropDown(),
+                        const SizedBox(width: 30),
+                        DropDown(name: nameController.text)
                       ],
                     ),
                   ],

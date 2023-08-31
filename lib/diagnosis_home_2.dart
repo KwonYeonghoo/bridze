@@ -26,7 +26,7 @@ class DiagnosisHome2Page extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Text(
-                    "BridZe, 이렇게 진단해요 !",
+                    "BridZe, 이렇게 평가해요 !",
                     style: TextStyle(
                       fontSize: 40,
                       fontFamily: 'BMJUA',
@@ -43,7 +43,7 @@ class DiagnosisHome2Page extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Text(
-                    "정확한 진단을 위해 꼭 모든 진단을 완료해줘 !",
+                    "정확한 평가를 위해 꼭 모든 평가를 완료해줘 !",
                     style: TextStyle(
                       fontSize: 35,
                       fontFamily: 'BMJUA',

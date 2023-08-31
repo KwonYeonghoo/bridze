@@ -1,6 +1,7 @@
-import 'package:bridze/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/audio_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../model/audio_recording.dart';
+import '../../model/crr.dart';
 
 class DiagnosisMother2Page extends StatefulWidget {
   const DiagnosisMother2Page({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class DiagnosisMother2Page extends StatefulWidget {
 class _DiagnosisMother2PageState extends State<DiagnosisMother2Page> {
   bool showPlayer = false;
   String? audioPath;
+  String crrScore = '';
 
   @override
   void initState() {
@@ -19,15 +21,21 @@ class _DiagnosisMother2PageState extends State<DiagnosisMother2Page> {
     super.initState();
   }
 
+  Future<void> _loadcrrScore() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      crrScore = prefs.getString('globalavrScore') ?? '';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffEEF3F6),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            // Center the entire row containing the image and text
             child: Padding(
               padding: const EdgeInsets.only(
                 top: 30,
@@ -42,7 +50,7 @@ class _DiagnosisMother2PageState extends State<DiagnosisMother2Page> {
                   ),
                   const SizedBox(width: 10),
                   const Text(
-                    "문장을 읽어주세요.",
+                    "문장을 읽어주세요",
                     style: TextStyle(
                       fontSize: 40,
                       fontFamily: 'BMJUA',
@@ -67,7 +75,13 @@ class _DiagnosisMother2PageState extends State<DiagnosisMother2Page> {
             height: 50,
           ),
           const Center(
-            child: AudioRecorderWidget(key: Key('audio_recorder8')),
+            child: AudioRecorderWidget(key: Key('audio_recorder_mom')),
+          ),
+          const Center(
+            child: Score2(
+              initialValue: 'mom',
+              number: 0,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 18.0),
@@ -76,28 +90,6 @@ class _DiagnosisMother2PageState extends State<DiagnosisMother2Page> {
                 'assets/images/mother.png',
                 height: 60,
                 width: 120,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding:
-                    const EdgeInsets.fromLTRB(0, 0, 40, 40), // Add spacing here
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const DiagnosisScreen()));
-                  },
-                  child: Image.asset(
-                    "assets/images/finish_blue.png",
-                    height: 100,
-                    width: 100,
-                  ),
-                ),
               ),
             ),
           ),

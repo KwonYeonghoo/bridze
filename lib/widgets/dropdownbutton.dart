@@ -4,14 +4,16 @@ import 'package:bridze/screen/diagnosis_8/diagnosis_8.dart';
 import 'package:flutter/material.dart';
 
 class DropDown extends StatefulWidget {
-  const DropDown({Key? key}) : super(key: key);
+  final String name;
+
+  const DropDown({Key? key, required this.name}) : super(key: key);
 
   @override
   DropDownState createState() => DropDownState();
 }
 
 class DropDownState extends State<DropDown> {
-  String? dropdownValue = "5"; // Default value to 5
+  String? dropdownValue = "5";
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,9 @@ class DropDownState extends State<DropDown> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const FivePage(),
+              builder: (context) => FivePage(
+                name: widget.name,
+              ),
             ),
           );
         } else if (value == "8") {

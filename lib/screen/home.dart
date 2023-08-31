@@ -14,7 +14,7 @@ class HomeScreenState extends State<HomeScreen> {
   MyAudioPlayer myAudioPlayer = MyAudioPlayer();
   bool isPlaying = false;
   String greetingText =
-      '안녕?나는 토리찌야!\n나는 너와 친구가 되고 싶어~\n너에 대해 잘 알고 싶은데\n지금부터 내 질문에 솔직하게 답해줄거지 ?';
+      '안녕 ? 나는 토리찌야 !\n나는 너와 친구가 되고 싶어 ~\n너에 대해 잘 알고 싶은데\n지금부터 내 질문에 솔직하게 답해줄거지 ?';
 
   void toggleAudio() {
     setState(() {
@@ -38,7 +38,7 @@ class HomeScreenState extends State<HomeScreen> {
   void _changeGreetingText() {
     setState(() {
       greetingText =
-          '첫 번째 놀이는 내가 제시한 문장을 그대로 읽어주면 돼 ~\n두 번째 놀이는 내가 물어보는 질문에 솔직하게 답해줄거지 ~\n밑에 나오는 얼굴 표정과 점수를 보고\n너의 기분을 클릭해줘!';
+          '첫 번째 놀이는 내가 제시한 문장을 그대로 읽어주면 돼 ~\n두 번째 놀이는 내가 물어보는 질문에 솔직하게 답해줄거지 ~\n밑에 나오는 얼굴 표정과 점수를 보고\n너의 기분을 클릭해줘 !';
     });
   }
 
@@ -63,10 +63,10 @@ class HomeScreenState extends State<HomeScreen> {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 480, top: 30.0),
-              child: Text("진단 과정",
+              child: Text("평가 과정 안내",
                   style: TextStyle(
                     fontFamily: 'BMJUA',
-                    fontSize: 70,
+                    fontSize: 50,
                   )),
             ),
             Padding(

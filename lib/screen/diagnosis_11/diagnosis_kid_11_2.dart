@@ -1,6 +1,6 @@
-import 'package:bridze/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/audio_test.dart';
+import '../../model/audio_recording.dart';
+import '../../model/avr.dart';
 
 class ElevenReadPage extends StatefulWidget {
   const ElevenReadPage({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _ElevenReadPageState extends State<ElevenReadPage> {
                     ),
                     const SizedBox(width: 10),
                     const Text(
-                      "Bước 2",
+                      "đánh giá ngôn ngữ",
                       style: TextStyle(
                         fontSize: 40,
                         fontFamily: 'Rowdies',
@@ -62,8 +62,8 @@ class _ElevenReadPageState extends State<ElevenReadPage> {
                   right: 10.0,
                 ),
                 child: Text(
-                  "직업으로 분류해보자면 요리사, 소방관, 경찰관 등의 사람들이 근무할 때 입는 의상으로 나눌 수 있습니다. 요리사는 요리를 할 때 몸에 붙어 있는 이물질이 요리에 들어가는 것을 방지하기 위해 가운을 입습니다. 소방관은 위험한 상황에 노출되어 있으며 화염 속에서 불이 몸에 붙는 것을 막기 위해 소방관복을 입어 몸을 화상으로부터 보호합니다. 마지막으로 경찰관은 사람들에게 범죄나 불법적인 일에 대한 경각심을 일으키기 위해 경찰복을 입어서 특별한 경찰관의 신분을 나타냅니다.",
-                  textAlign: TextAlign.center, // Center the text horizontally
+                  "직업으로 분류해보자면 요리사, 소방관, 경찰관 등의 사람들이 근무할 때 입는 의상으로 나눌 수 있습니다.\n요리사는 요리를 할 때 몸에 붙어 있는 이물질이 요리에 들어가는 것을 방지하기 위해 가운을 입습니다.\n소방관은 위험한 상황에 노출되어 있으며 화염 속에서 불이 몸에 붙는 것을 막기 위해\n소방관복을 입어 몸을 화상으로부터 보호합니다.\n마지막으로 경찰관은 사람들에게 범죄나 불법적인 일에 대한 경각심을 일으키기 위해\n경찰복을 입어서 특별한 경찰관의 신분을 나타냅니다.",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 35,
                     fontFamily: 'KCC',
@@ -78,6 +78,12 @@ class _ElevenReadPageState extends State<ElevenReadPage> {
                   key: Key('audio_recorder11'),
                 ),
               ),
+              const Center(
+                child: Score(
+                  initialValue: '11',
+                  number: 0,
+                ),
+              ),
               Column(
                 children: [
                   Image.asset(
@@ -86,30 +92,6 @@ class _ElevenReadPageState extends State<ElevenReadPage> {
                     height: 100,
                   ),
                 ],
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                        0, 0, 40, 40), // Add spacing here
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DiagnosisScreen(),
-                          ),
-                        );
-                      },
-                      child: Image.asset(
-                        "assets/images/finish_pink.png",
-                        width: 100,
-                        height: 100,
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ],
           ),

@@ -1,43 +1,23 @@
-import 'dart:async';
-import 'package:bridze/screen/diagnosis.dart';
+import 'package:bridze/screen/diagnosis_5/diagnosis_kid_5_3.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/audio_test.dart';
+import '../../model/audio_recording.dart';
+import '../../model/avr_save.dart';
 
-class FiveReadPage extends StatefulWidget {
-  const FiveReadPage({Key? key}) : super(key: key);
+class FiveRead2Page extends StatefulWidget {
+  const FiveRead2Page({Key? key}) : super(key: key);
 
   @override
-  State<FiveReadPage> createState() => _FiveReadPageState();
+  State<FiveRead2Page> createState() => _FiveRead2PageState();
 }
 
-class _FiveReadPageState extends State<FiveReadPage> {
+class _FiveRead2PageState extends State<FiveRead2Page> {
   bool showPlayer = false;
   String? audioPath;
-  List<String> greetingTextList = [
-    '엄마 하늘만큼 땅만큼 사랑해요.\n오늘도 같이 놀아줘서 고마워요.',
-    '아이바오가 푸바오를 핥아줬어요.\n그리고 푸바오는 판다 랜드에 살아요.',
-    '오늘 유치원에서 책을 읽었어요.\n책 제목은 백설공주와 일곱난쟁이이었어요.'
-  ];
-  int currentGreetingIndex = 0;
 
   @override
   void initState() {
     showPlayer = false;
     super.initState();
-    _startChangingGreetingText();
-  }
-
-  void _startChangingGreetingText() {
-    Timer.periodic(const Duration(seconds: 15), (timer) {
-      setState(() {
-        currentGreetingIndex =
-            (currentGreetingIndex + 1) % greetingTextList.length;
-      });
-    });
-  }
-
-  String getCurrentGreetingText() {
-    return greetingTextList[currentGreetingIndex];
   }
 
   @override
@@ -80,10 +60,10 @@ class _FiveReadPageState extends State<FiveReadPage> {
                     const SizedBox(
                       height: 50,
                     ),
-                    Text(
-                      getCurrentGreetingText(),
+                    const Text(
+                      '엄마 하늘만큼 땅만큼 사랑해요.\n오늘도 같이 놀아줘서 고마워요.',
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 75,
                         fontFamily: 'KCC',
                       ),
@@ -92,7 +72,13 @@ class _FiveReadPageState extends State<FiveReadPage> {
                       height: 50,
                     ),
                     const Center(
-                      child: AudioRecorderWidget(key: Key('audio_recorder5')),
+                      child: AudioRecorderWidget(key: Key('audio_recorder5_1')),
+                    ),
+                    const Center(
+                      child: Score(
+                        initialValue: '5_1',
+                        number: 1,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -115,12 +101,12 @@ class _FiveReadPageState extends State<FiveReadPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const DiagnosisScreen(),
+                                  builder: (context) => const FiveRead3Page(),
                                 ),
                               );
                             },
                             child: Image.asset(
-                              "assets/images/finish_pink.png",
+                              "assets/images/cursor.png",
                               width: 100,
                               height: 100,
                             ),
