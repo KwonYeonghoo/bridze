@@ -121,7 +121,7 @@ pipe(audio_file)['text']
 - Flutter 설치 하기 : https://docs.flutter.dev/get-started/install
 - 코드 구동 하기 
      - vscode나 androidstudio에서 device를 chrome으로 설정합니다.
-     - 터미널에 flutter pub get후 main.dart를 디버깅합니다.
+     - 터미널에 flutter pub get 입력 후 main.dart를 디버깅합니다.
        
 # 최종 모델 성능 결과
 |모델|정확도|
