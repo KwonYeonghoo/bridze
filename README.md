@@ -41,7 +41,13 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 ---
 
 ## 모델 성능 결과
-
+|모델|정확도|
+|---|---|
+|openai whisper|80.7|
+|BridZe fine tuned whisper|92.7|
+|vggnet whisper|.|
+|fine tuned vggnet whisper|82.6|
+|fine tuned SEvggnet whisper|.|
 ---
 ## 서비스 흐름도
 
