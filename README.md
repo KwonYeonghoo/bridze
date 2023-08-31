@@ -40,6 +40,26 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
 # Whisper 파일 트리
 ```
 📦data_STT, CV
+ ┗ 📂Whisper용 원천 데이터(샘플 100개)
+ ┃ ┣ 📂라벨링 데이터(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.csv
+                 . . .
+ ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.csv
+ ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.csv
+ ┃ ┗ 📂오디오 파일(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.wav
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.wav
+                 . . .
+ ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.wav
+ ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.wav
+```
+```
+AI Hub에서 제공한 외국인의 한국어 발화 데이터셋입니다.
+'https://aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=505'에서 다운로드 가능합니다.
+데이터의 수가 10만개가 넘어가 100개씩만 업로드하였습니다.
+```
+```
  ┣ 📂Whisper_finetuned
  ┃ ┣ 📂flagged
  ┃ ┣ 📂git-lfs-3.4.0(파일 생략)
@@ -68,26 +88,6 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 - bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다.
    - bridze data는 whisper모델에 투입하여 훈련할 수 있도록 가공이 완료된 데이터셋입니다.    
 
-```
- ┗ 📂Whisper용 원천 데이터(샘플 100개)
- ┃ ┣ 📂라벨링 데이터(샘플 100개)
- ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
- ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.csv
-                 . . .
- ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.csv
- ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.csv
- ┃ ┗ 📂오디오 파일(샘플 100개)
- ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.wav
- ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.wav
-                 . . .
- ┃ ┃ ┣ 📜VN10QC227_VN0082_20210802.wav
- ┃ ┃ ┗ 📜VN10QC227_VN0083_20210812.wav
-```
-```
-AI Hub에서 제공한 외국인의 한국어 발화 데이터셋입니다.
-'https://aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=505'에서 다운로드 가능합니다.
-데이터의 수가 10만개가 넘어가 100개씩만 업로드하였습니다.
-```
 ---
 # SEvggnet 파일 트리
 
