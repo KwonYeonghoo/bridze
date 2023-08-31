@@ -80,6 +80,8 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 - bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다.
    - bridze data는 whisper모델에 투입하여 훈련할 수 있도록 가공이 완료된 데이터셋입니다.
 ---
+# SEvggnet 파일 트리
+---
 # 환경 설정
 
 ## Whisper 실행 환경
