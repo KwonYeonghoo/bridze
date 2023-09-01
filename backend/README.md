@@ -46,18 +46,12 @@ backend
 
 ### 1. 새로운 디렉토리를 생성하고 이동합니다:
 ```bash 
-git init bridze_backend
+mkdir bridze_backend
 cd bridze_backend
 ```
-### 2. sparse checkout을 활성화합니다:
+### 2. 깃 클론 이후 backend 폴더에 들어갑니다:
 ```bash 
-git config core.sparseCheckout true
-```
-### 3. 원격 저장소를 추가하고 최신 변경사항을 가져옵니다:
-```bash 
-git remote add -f origin https://github.com/BridZe/bridze.git
-echo backend/* .git/info/sparse-checkout
-git pull origin master
+git clone https://github.com/BridZe/bridze.git
 cd backend
 ```
 ### 6. 가상 환경을 생성하고 활성화합니다:
@@ -67,15 +61,14 @@ cd backenv/scripts
 activate
 ```
 ### 5. 프로젝트에 필요한 패키지들을 설치합니다:
+##### requirements 다운 중에 계속 문제가 생김, 해결방법 찾아보는 중..
 ```bash 
 cd ../..
-
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 python -m numpy 
 python -m pygame
-##### 넘파이 삭제해서 확인필요
-텐서플로우에 이미 포함됐을지도
+
 ```
 ### 7. Flask 애플리케이션을 실행할 환경 변수를 설정합니다:
 ```bash 
