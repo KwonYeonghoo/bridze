@@ -38,11 +38,47 @@ backend
 ```
 ## Bridze Backend 실행 방법
 
-##### 중요: Bridze 프로젝트에 필요한 백엔드 웹 서버는 구름IDE의 '항상 켜두기' 기능을 이용하여 별도로 항상 실행 중입니다. 따라서 Bridze 프로젝트를 실행하기 위해 별도로 백엔드 서버를 실행하실 필요는 없습니다.
+**중요:** Bridze 프로젝트에 필요한 백엔드 웹 서버는 구름IDE의 '항상 켜두기' 기능을 이용하여 별도로 항상 실행 중입니다. 따라서 Bridze 프로젝트를 실행하기 위해 별도로 백엔드 서버를 실행하실 필요는 없습니다.
 
 아래 방법은 Bridze의 백엔드 서버 기능만 따로 실행하는 방법입니다. 직접 실행한 백엔드 서버를 Bridze의 프론트엔드와 연결하려면 프론트엔드 내부의 URL들을 실행시키신 서버 주소로 변경해야 합니다. 
 
-#### 작성중~
+#### 계속 안돼서 수정중에 있습니다ㅜㅜ
+
+### 1. 새로운 디렉토리를 생성하고 이동합니다:
+```bash 
+mkdir bridze_backend
+cd bridze_backend
+```
+### 2. 깃 클론 이후 backend 폴더에 들어갑니다:
+```bash 
+git clone https://github.com/BridZe/bridze.git
+cd backend
+```
+### 6. 가상 환경을 생성하고 활성화합니다:
+```bash 
+py -3.9 -m venv backenv
+cd backenv/scripts
+activate
+```
+### 5. 프로젝트에 필요한 패키지들을 설치합니다:
+##### requirements 다운 중에 계속 문제가 생김, 해결방법 찾아보는 중..
+```bash 
+cd ../..
+python.exe -m pip install --upgrade pip
+pip install -r requirements.txt
+python -m numpy 
+python -m pygame
+
+```
+### 7. Flask 애플리케이션을 실행할 환경 변수를 설정합니다:
+```bash 
+export FLASK_APP=application
+export FLASK_ENV=development
+```
+### 8. Flask 애플리케이션을 실행합니다:
+```bash 
+flask run
+```
 
 ## 백엔드 주요 기능
 
