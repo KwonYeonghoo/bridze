@@ -122,7 +122,7 @@ pipe(audio_file)['text']
 - 코드 구동하기 
      - vscode나 androidstudio에서 device를 chrome으로 설정합니다.
      - 터미널에 flutter pub get 입력 후 main.dart를 디버깅합니다.
-- main.dart 위치 : `lib/main.dart`
+- main.dart 위치 : `bridze/lib/main.dart`
 
 ## 백엔드 개발 환경
 
@@ -156,7 +156,7 @@ pipe(audio_file)['text']
 ## Frontend
 프론트엔드(flutter)에서는 기관 추천 알고리즘을 제공합니다. 임계치에 따라 분류된 언어 평가(상,중,하)와 정서평가(상,중상,중하,하)에 맞는 아동 맞춤 기관을 제공합니다.
 본인이 원하는 지역을 선택하면 해당 지역의 맞춤 기관을 추천받을 수 있습니다.
-- 알고리즘 파일 위치:
+- 알고리즘 파일 위치: '/bridze/lib/institution.dart'
 
 ## Backend
 백엔드(flask)에서는 프론트엔드(flutter)와 상호작용하며 음성 및 이미지 데이터 관련 다양한 작업을 처리합니다. 음성을 텍스트로 변환하는(STT) 기능, Character Recognition Rate (CRR) 점수 산정, 비디오 프레임 추출, 이미지 감정 분석 등의 기능을 지원합니다.
