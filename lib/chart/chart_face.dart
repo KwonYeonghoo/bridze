@@ -6,10 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(const ChartFaceApp());
-}
-
 class ChartFaceApp extends StatefulWidget {
   const ChartFaceApp({super.key});
 

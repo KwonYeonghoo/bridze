@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-void main() {
-  runApp(const ChartApp2());
-}
-
 class ChartApp2 extends StatelessWidget {
   const ChartApp2({Key? key}) : super(key: key);
 
@@ -14,7 +10,7 @@ class ChartApp2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: LanguagePage2(
-        crrScore: '', // Pass the actual crrScore value here
+        crrScore: '',
       ),
     );
   }
@@ -36,7 +32,7 @@ class LanguagePage2State extends State<LanguagePage2> {
   String crrScore = '';
   String evaluation2 = '';
 
-  late List<ChartData> data = []; // Initialize with an empty list
+  late List<ChartData> data = [];
   late TooltipBehavior _tooltip;
 
   @override
@@ -44,7 +40,7 @@ class LanguagePage2State extends State<LanguagePage2> {
     super.initState();
     crrScore = widget.crrScore;
     _tooltip = TooltipBehavior(enable: true);
-    initializeChartData(); // Call the method to initialize data
+    initializeChartData();
   }
 
   Future<void> initializeChartData() async {
@@ -55,8 +51,8 @@ class LanguagePage2State extends State<LanguagePage2> {
     setState(() {
       data = [
         ChartData(
-          '한국인 부모님 점수',
-          75,
+          '성인 베트남인 점수',
+          90,
           Color(int.parse('96B9DB', radix: 16)).withOpacity(1.0),
         ),
         ChartData(
