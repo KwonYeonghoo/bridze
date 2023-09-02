@@ -1,4 +1,4 @@
-import 'package:bridze/chart/chart_language_profile.dart';
+import 'package:bridze/chart/chart_profile.dart';
 import 'package:bridze/screen/institution.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -121,7 +121,8 @@ class _Login2PageState extends State<Login2Page> {
                                     onTap: () {
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
-                                          builder: (context) => LanguagePage2(
+                                          builder: (context) => ProfileApp(
+                                            crrScore: crrScore,
                                             avrScore: avrScore,
                                           ),
                                         ),
@@ -211,7 +212,6 @@ class _Login2PageState extends State<Login2Page> {
                                               ),
                                             ),
                                             child: const Center(
-                                              // Added Center widget to properly center the Text
                                               child: Text(
                                                 "기관 추천 >",
                                                 style: TextStyle(
