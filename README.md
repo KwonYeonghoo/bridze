@@ -159,7 +159,13 @@ face crop.ipynb로 얼굴부분만 crop해 냅니다
 - Vggnet 구동 환경 :
    - os: Ubuntu 18.0.4
    - vga : geforce rtx2080 super
+   - 필요 라이브러리는 requirements.txt에 기록 되어있습니다. cmd 프롬프트 명령어 pip install -r requirements.txt로 필요 라이브러리를 설치할 수 있습니다.
 - Vggnet 사용 방법 (데이터 불러오기) :
+   - dataset.csv파일 내에 dataset폴더의 경로 및 jpg파일 명이 기록되어있습니다.
+   - dataset폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
+   - 데이터양이 불균형할 경우 학습이 제대로 되지않으므로 upsamling을 통해 균형을 맞춰줍니다.
+   - vggnet모델의 checkpoint의 가중치는 vggnet_up.h5 파일로 최종 모델의 가중치는 vggnet_trained파일로 저장됩니다.
+   - 모델의 가중치는 플러터 환경으로 이동하고 촬영한 사진들을 가중치가 적용된 모델을 통해 추론하는 방식으로 진행됩니다.
 ---
 
 ## 프론트엔드 개발 환경
