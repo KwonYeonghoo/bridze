@@ -110,28 +110,7 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
  ┃ ┣ 📜vggnet_trained.h5
  ┃ ┣ 📜vggnet_trained.ipynb
  ┃ ┗ 📜vggnet_up.h5
- ┣ 📂Whisper_finetuned
- ┃ ┣ 📂git-lfs-3.4.0(파일 생략)
- ┃ ┣ 📂Whisper_trained_model
- ┃ ┃ ┣ 📂runs
- ┃ ┃ ┣ 📜.gitattributes
- ┃ ┃ ┣ 📜.gitignore
- ┃ ┃ ┣ 📜added_tokens.json
- ┃ ┃ ┣ 📜config.json
-             . . .
- ┃ ┣ 📜=0.30
- ┃ ┣ 📜=2.6.1
- ┃ ┗ 📜Whisper_코드.ipynb
- ┣ 📂Whisper용 원천 데이터(샘플 100개)
- ┃ ┣ 📂라벨링 데이터(샘플 100개)
- ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
- ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.csv
-             . . .
- ┃ ┗ 📂오디오 파일(샘플 100개)
- ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.wav
- ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.wav
-             . . . 
-  ┗ 📜requirements.txt
+
 ```
 ---
 # 환경 설정
@@ -161,7 +140,7 @@ pipe(audio_file)['text']
    - 필요 라이브러리는 requirements.txt에 기록되어있습니다. cmd 프롬프트 명령어 pip install -r requirements.txt로 필요 라이브러리를 설치할 수 있습니다.
 - Vggnet 사용 방법 (데이터 불러오기) :
    - dataset.csv파일 내에 dataset폴더의 경로 및 jpg파일 명이 기록되어있습니다.
-   - dataset폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
+   - dataset 폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
    - 데이터양이 불균형할 경우 학습이 제대로 되지않으므로 upsamling을 통해 균형을 맞춰줍니다.
    - vggnet모델의 checkpoint의 가중치는 vggnet_up.h5 파일로 최종 모델의 가중치는 vggnet_trained파일로 저장됩니다.
    - 모델의 가중치는 플러터 환경으로 이동하고 촬영한 사진들을 가중치가 적용된 모델을 통해 추론하는 방식으로 진행됩니다.
