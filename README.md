@@ -130,6 +130,11 @@ pipe = pipeline(model="oceanstar/bridze")
 pipe(audio_file)['text']
 위와 같이 모델을 불러 사용할 수 있습니다.
 ```
+### whisper 실행시 주의 사항
+from huggingface_hub import notebook_login
+
+notebook_login()
+
 ---
 ## Vggnet 실행 환경
 - Vggnet 추가 학습 코드 : `CV_preprocessing 폴더 내의 코드들`
