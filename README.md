@@ -135,6 +135,10 @@ from huggingface_hub import notebook_login
 
 notebook_login()
 
+해당 코드 실행 시
+- 토큰 : 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   
+  - 이 토큰을 넣어야 저희가 fine tuning한 모델을 쓸 수 있습니다
+
 ---
 ## Vggnet 실행 환경
 - Vggnet 추가 학습 코드 : `CV_preprocessing 폴더 내의 코드들`
