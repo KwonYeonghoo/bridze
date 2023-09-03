@@ -155,6 +155,8 @@ pipe(audio_file)['text']
    - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
 - Vggnet 구동 환경 :
+   - os: Ubuntu 18.0.4
+   - vga : geforce rtx2080 super
 - Vggnet 사용 방법 (데이터 불러오기) :
 ---
 
