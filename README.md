@@ -130,7 +130,7 @@ pipe = pipeline(model="oceanstar/bridze")
 pipe(audio_file)['text']
 위와 같이 모델을 불러 사용할 수 있습니다.
 ```
-### whisper 실행시 주의사항
+### Whisper 실행시 주의사항
 from huggingface_hub import notebook_login
 
 notebook_login()
