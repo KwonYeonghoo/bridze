@@ -36,7 +36,9 @@ emotions = {
 }
 num_classes = len(emotions)
 input_shape = CROP_SIZE+(1,)
-weights = '/workspace/wpqkf/facial_emotion_recognition/vggnet_weight.h5'
+
+# weights의 경우 vggnet_weight.h5 경로를 절대경로로 입력하세요
+weights = 'backend/facial_emotion_recognition/vggnet_weight.h5'
 
 
 class VGGNet(Sequential):
@@ -188,8 +190,8 @@ def delete_all_jpg_files(folder_path):
 # temp 이미지들의 감정 인식을 위한 함수
 # 가장 빈도수 높은 감정 및 이미지 추출
 def find_max_emotion(stage_name, arr):
-    source_folder_name = "/workspace/wpqkf/facial_emotion_recognition/temp/"
-    des_folder_name = "/workspace/wpqkf/facial_emotion_recognition/inference/"
+    source_folder_name = "backend/facial_emotion_recognition/temp"
+    des_folder_name = "backend/facial_emotion_recognition/inference"
     path_arr, emotion_arr = zip(*arr)
     path_arr = np.array(path_arr)
     emotion_arr = np.array(emotion_arr)
@@ -230,8 +232,8 @@ def find_max_emotion(stage_name, arr):
 # videos의 frame의 감정 인식을 위한 함수
 # 가장 빈도수 높은 감정 및 이미지 추출
 def find_max_emotion2(stage_name, arr):
-    source_folder_name2 = "/workspace/wpqkf/videos/frames/"
-    des_folder_name2 = "/workspace/wpqkf/videos"
+    source_folder_name2 = "backend/videos/frames"
+    des_folder_name2 = "backend/videos"
     path_arr, emotion_arr = zip(*arr)
     path_arr = np.array(path_arr)
     emotion_arr = np.array(emotion_arr)
