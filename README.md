@@ -151,6 +151,8 @@ pipe(audio_file)['text']
 ---
 ## Vggnet 실행 환경
 - Vggnet 추가 학습 코드 : ```CV_preprocessing 폴더 내의 코드들```
+   - 한글 파일명이 깨지므로 renaming으로 랜덤한 이름으로 변경합니다 
+face crop.ipynb로 얼굴부분만 crop해 냅니다
 - Vggnet fine tuning에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
    - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
