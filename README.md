@@ -133,9 +133,10 @@ pipe(audio_file)['text']
 |---|---|
 |openai whisper|80.7|
 |BridZe fine tuned whisper|92.7|
-|vggnet|.|
-|BridZe fine tuned SEvggnet|.|
-- openai whisper과 vggnet은 기존에 공개된 오픈 소스 코드의 정확도이며 BridZe fine tuned whisper과 BridZe fine tuned SEvggnet은 저희 팀이 직접 fine tuning하여 목적에 맞게 새로이 구축된 모델의 정확도입니다.
+|fer2013 데이터셋 vggnet|93.8|
+|ai hub 데이터셋 SEvggnet|.|
+- openai whisper은 기존에 공개된 오픈 소스 코드의 정확도이며 BridZe fine tuned whisper은 저희 팀이 직접 fine tuning하여 목적에 맞게 새로이 구축된 모델의 정확도입니다.
+- vggnet 모델의 경우, 동일한 코드이더라도 사용하는 데이터셋에서 따라 정확도가 유동적입니다. 저희 팀이 직접 추가학습을 시킨 결과 캐글의 fer2013 인물 데이터로는 93.8의 정확도를 가진 모델이 구축되었으나 실시간으로 동양인의 얼굴 표정을 분류하고자 하였을 때 잘 분류되지 않는 모습을 보였습니다. 이에 따라 데이터셋을 ai hub의 한국인 감정인식을 위한 복합 영상 데이터셋으로 변경하였고 정확도는 fer2013 데이터보다 낮으나 실시간 얼굴 표정 분류에서는 훨씬 뛰어난 성능을 보여 ai hub 데이터셋 SEvggnet 모델로 최종 결정하였습니다.
   
 # whisper 성능 결과
 |step|training loss|validation loss|cer(글자 단위 오류율)|
