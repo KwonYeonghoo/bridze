@@ -185,7 +185,7 @@ OpenCV를 사용하여 동영상 파일을 읽고 지정된 간격으로 프레�
 - 알고리즘 실행 위치: `/bridze/backend/videos/video2frame.py`
 ---
 
-## 서비스 흐름도
+## 서비스 흐름도 및 시스템 구성도
 ![서비스 흐름도](https://github.com/BridZe/bridze/assets/89845380/97583ad6-c8ad-4aa0-af2b-944b46edbca5)
 ## 언어 평가 과정
 ![stt](https://github.com/BridZe/bridze/assets/89845380/35c4dec5-07cc-4e7d-9bd4-0d896e6d0472)
