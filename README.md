@@ -142,6 +142,8 @@ pipe(audio_file)['text']
 - vggnet 모델의 경우, 동일한 코드이더라도 사용하는 데이터셋에서 따라 정확도가 유동적입니다. 저희 팀이 직접 추가학습을 시킨 결과 캐글의 fer2013 인물 데이터로는 93.2의 정확도를 가진 모델이 구축되었으나 실시간으로 동양인의 얼굴 표정을 분류하고자 하였을 때 잘 분류되지 않는 모습을 보였습니다. 이에 따라 데이터셋을 ai hub의 한국인 감정인식을 위한 복합 영상 데이터셋으로 변경하였고 정확도는 fer2013 데이터보다 낮으나 실시간 얼굴 표정 분류에서는 훨씬 뛰어난 성능을 보여 ai hub 데이터셋 SEvggnet 모델로 최종 결정하였습니다.
   
 ![image](https://github.com/BridZe/bridze/assets/89845380/1548aeae-e261-4711-bd79-299cd5b981e6)
+- 참고 : fer2013 데이터셋으로 학습시킨 결과화면의 캡처본입니다.
+- fer2013은 [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013)에서 다운 가능합니다.
 
 # whisper 성능 결과
 |step|training loss|validation loss|cer(글자 단위 오류율)|
