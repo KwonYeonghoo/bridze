@@ -44,21 +44,15 @@ backend
 
 #### 계속 안돼서 수정중에 있습니다ㅜㅜ
 
-### 1. 새로운 디렉토리를 생성하고 이동합니다:
-```bash 
-mkdir bridze_backend
-cd bridze_backend
-```
-### 2. 깃 클론 이후 backend 폴더에 들어갑니다:
+### 1. 깃 클론 이후 backend 폴더에 들어갑니다:
 ```bash 
 git clone https://github.com/BridZe/bridze.git
-cd backend
+cd bridze/backend
 ```
-### 6. 가상 환경을 생성하고 활성화합니다:
+### 2. 가상 환경을 생성하고 활성화합니다:
 ```bash 
-py -3.9 -m venv backenv
-cd backenv/scripts
-activate
+py -3.8 -m venv backenv
+backenv\Scripts\activate
 ```
 ### 5. 프로젝트에 필요한 패키지들을 설치합니다:
 ##### requirements 다운 중에 계속 문제가 생김, 해결방법 찾아보는 중..
@@ -66,14 +60,12 @@ activate
 cd ../..
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
-python -m numpy 
-python -m pygame
 
 ```
 ### 7. Flask 애플리케이션을 실행할 환경 변수를 설정합니다:
 ```bash 
-export FLASK_APP=application
-export FLASK_ENV=development
+set FLASK_APP=application
+set FLASK_ENV=development
 ```
 ### 8. Flask 애플리케이션을 실행합니다:
 ```bash 
