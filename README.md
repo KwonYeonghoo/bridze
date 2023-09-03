@@ -150,16 +150,15 @@ pipe(audio_file)['text']
 ```
 ---
 ## Vggnet 실행 환경
-- Vggnet 추가 학습 코드 : ```CV_preprocessing 폴더 내의 코드들```
-   - 한글 파일명이 깨지므로 renaming으로 랜덤한 이름으로 변경합니다 
-face crop.ipynb로 얼굴부분만 crop해 냅니다
+- Vggnet 추가 학습 코드 : `CV_preprocessing 폴더 내의 코드들`
+   - 한글 파일명이 깨지므로 renaming으로 랜덤한 이름으로 변경합니다. 그 뒤 `face crop.ipynb`로 얼굴부분만 crop합니다.
 - Vggnet fine tuning에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
    - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
    - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
 - Vggnet 구동 환경 :
    - os: Ubuntu 18.0.4
    - vga : geforce rtx2080 super
-   - 필요 라이브러리는 requirements.txt에 기록 되어있습니다. cmd 프롬프트 명령어 pip install -r requirements.txt로 필요 라이브러리를 설치할 수 있습니다.
+   - 필요 라이브러리는 requirements.txt에 기록되어있습니다. cmd 프롬프트 명령어 pip install -r requirements.txt로 필요 라이브러리를 설치할 수 있습니다.
 - Vggnet 사용 방법 (데이터 불러오기) :
    - dataset.csv파일 내에 dataset폴더의 경로 및 jpg파일 명이 기록되어있습니다.
    - dataset폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
@@ -221,7 +220,7 @@ face crop.ipynb로 얼굴부분만 crop해 냅니다
 |무표정|82.3|
 |슬픔|80.3|
 |전체|77.1|
-- Vggnet은 새로운 데이터셋으로 평가되는 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요합니다. 여러 번의 실험 후 해당 모델로 최종 선정하였습니다.
+- Vggnet은 새로운 데이터셋으로 평가되는 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요하다는 전문가의 조언을 받아 최종적으로 선정된 모델입니다.
 
 # 모델과 서비스 연결
 ## Frontend
