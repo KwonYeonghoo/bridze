@@ -91,6 +91,48 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
    - bridze data는 whisper모델에 투입하여 훈련할 수 있도록 가공이 완료된 데이터셋입니다.
 ---
 # Vggnet 파일 트리
+```
+📦data_STT, CV
+ ┣ 📂CV_preprocessing
+ ┃ ┣ 📂dataset
+ ┃ ┣ 📂pre_dataset
+ ┃ ┣ 📜facecrop.ipynb
+ ┃ ┣ 📜readme.txt
+ ┃ ┗ 📜renaming.ipynb
+ ┣ 📂CV_train
+ ┃ ┣ 📂dataset
+ ┃ ┃ ┣ 📜angry_aaabsuecbeeyjrkcgjku.jpg
+ ┃ ┃ ┣ 📜angry_aaacuodmlyrbtkeqqnjmqbdwvonxbk.jpg
+             . . .
+ ┃ ┃ ┣ 📜sad_egllfut6ovrw44vxjhtmbsvd3gvwl6cam3g3fndyur.jpg
+ ┃ ┃ ┗ 📜sad_eglpay54klutwg28ugwggon1ivqmjam1dvirfuq4vq.jpg
+ ┃ ┣ 📜dataset.csv
+ ┃ ┣ 📜vggnet_trained.h5
+ ┃ ┣ 📜vggnet_trained.ipynb
+ ┃ ┗ 📜vggnet_up.h5
+ ┣ 📂Whisper_finetuned
+ ┃ ┣ 📂git-lfs-3.4.0(파일 생략)
+ ┃ ┣ 📂Whisper_trained_model
+ ┃ ┃ ┣ 📂runs
+ ┃ ┃ ┣ 📜.gitattributes
+ ┃ ┃ ┣ 📜.gitignore
+ ┃ ┃ ┣ 📜added_tokens.json
+ ┃ ┃ ┣ 📜config.json
+             . . .
+ ┃ ┣ 📜=0.30
+ ┃ ┣ 📜=2.6.1
+ ┃ ┗ 📜Whisper_코드.ipynb
+ ┣ 📂Whisper용 원천 데이터(샘플 100개)
+ ┃ ┣ 📂라벨링 데이터(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.csv
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.csv
+             . . .
+ ┃ ┗ 📂오디오 파일(샘플 100개)
+ ┃ ┃ ┣ 📜VN10QC226_VN0005_20210801.wav
+ ┃ ┃ ┣ 📜VN10QC226_VN0009_20210810.wav
+             . . . 
+  ┗ 📜requirements.txt
+```
 ---
 # 환경 설정
 
