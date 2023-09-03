@@ -125,7 +125,7 @@ pipe(audio_file)['text']
 - main.dart 위치 : `bridze/lib/main.dart`
 
 ## 백엔드 개발 환경
-- goorm ide의 컨테이너에서 flask를 기반으로 개발했습니다.
+- 구름IDE의 컨테이너에서 flask를 기반으로 개발했습니다.
 - Bridze 프로젝트에 필요한 백엔드 웹 서버는 구름IDE의 '항상 켜두기' 기능을 이용하여 별도로 항상 실행 중입니다. 따라서 Bridze 프로젝트를 실행하기 위해 추가로 백엔드 서버를 실행하실 필요는 없습니다.
 - 로컬에서 서버를 따로 실행시키는 방법 및 기타 자세한 내용은 `backend/README.md`를 참고바랍니다. 
 ---
