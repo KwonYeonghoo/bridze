@@ -124,8 +124,9 @@ pipe(audio_file)['text']
      - 터미널에 flutter pub get 입력 후 main.dart를 디버깅합니다.
 - main.dart 위치 : `bridze/lib/main.dart`
 
-## 백엔드 개발 환경
-
+## 백엔드 실행 방법
+- Bridze 프로젝트에 필요한 백엔드 웹 서버는 구름IDE의 '항상 켜두기' 기능을 이용하여 별도로 항상 실행 중입니다. 따라서 Bridze 프로젝트를 실행하기 위해 별도로 백엔드 서버를 실행하실 필요는 없습니다.
+- 로컬에서 서버를 따로 실행시키는 방법은 `backend/README.md`를 참고바랍니다. 
 ---
   
 # 최종 모델 성능 결과
