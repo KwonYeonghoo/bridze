@@ -144,7 +144,7 @@ pipe(audio_file)['text']
   
   
 ![image](https://github.com/BridZe/bridze/assets/89845380/1548aeae-e261-4711-bd79-299cd5b981e6)
-- 참고 : fer2013 데이터셋으로 학습시킨 결과화면의 캡처본입니다.
+- 참고 : fer2013 데이터셋으로 학습시킨 결과화면의 캡처본입니다. 최종적으로 선정된 ai hub 데이터셋으로 학습시킨 결과는 아래 Vggnet 성능 결과에서 확인하실 수 있습니다.
 - fer2013 데이터셋은 [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013)에서 다운 가능합니다.
 
 # whisper 성능 결과
