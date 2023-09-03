@@ -89,7 +89,7 @@ flask run
  Mediapipe를 사용하여 얼굴을 감지하고, 학습된 VGGNet 모델을 활용하여 감지된 얼굴의 감정을 예측합니다.
 
 - 학습 모델 파일: `/backend/facial_emotion_recognition/vggnet_weigt.h5`
-- 모델 실행 위치: `/bridze/backend/facial_emotion_recognition/model_cv.py`
+- 모델 실행 위치: `/backend/facial_emotion_recognition/model_cv.py`
 
 ### 4. 동영상 프레임 추출
 
