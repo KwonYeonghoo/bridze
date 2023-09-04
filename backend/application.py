@@ -95,7 +95,7 @@ def execute_file():
             # Change the directory and execute the command
             #command = 'cd "/workspace/wpqkf/facial_emotion_recognition" && python "model_cv.py"'
             #result = subprocess.run(command, shell=True, capture_output=True, text=True)
-            p = np.sort(np.array(glob.glob('/workspace/wpqkf/facial_emotion_recognition/temp/*.jpg')))
+            p = np.sort(np.array(glob.glob('backend/facial_emotion_recognition/temp/*.jpg')))
             i = cv.infer_multi_images(p)
             final_emotion = cv.find_max_emotion(f'{emotion}', i)
             print(f'stage: {emotion}\nresult: {final_emotion}')
@@ -121,7 +121,7 @@ def execute_v2f():
 def execute_file2():
     if request.method == 'GET':
         try:
-            p2 = np.sort(np.array(glob.glob('/workspace/wpqkf/videos/frames/*.jpg')))
+            p2 = np.sort(np.array(glob.glob('backend/videos/frames/*.jpg')))
             i2 = cv.infer_multi_images(p2)
             final_emotion = cv.find_max_emotion2('chart', i2)
             print(f'chart result: {final_emotion}')
@@ -176,7 +176,7 @@ def download_image():
 @application.route("/download/chart/image", methods=['GET'])
 def download_chart_image():
     if request.method == 'GET':
-        file_path = os.path.join('/workspace/wpqkf/videos/chart', 'picture.jpg')
+        file_path = os.path.join('backend/videos/chart', 'picture.jpg')
 
         try:
             return send_file(file_path, as_attachment=True)

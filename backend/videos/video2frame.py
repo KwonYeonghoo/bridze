@@ -8,7 +8,7 @@ import os
 
 def video_to_frames():
     # 동영상 파일 경로들
-    video_paths = ['/workspace/wpqkf/videos/video1.mp4', '/workspace/wpqkf/videos/video2.mp4', '/workspace/wpqkf/videos/video3.mp4']
+    video_paths = ['backend/videos/video1.mp4', 'backend/videos/video2.mp4', 'backend/videos/video3.mp4']
 
     # 프레임 처리 간격 설정
     frame_interval = 0.15
@@ -22,7 +22,7 @@ def video_to_frames():
         cap = cv2.VideoCapture(video_path)
         video_num += 1
         # 프레임을 저장할 폴더 생성
-        output_folder = '/workspace/wpqkf/videos/frames'
+        output_folder = 'backend/videos/frames'
         os.makedirs(output_folder, exist_ok=True)
 
         # 프레임 추출을 위한 반복문
