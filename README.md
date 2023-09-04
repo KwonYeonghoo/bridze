@@ -266,6 +266,13 @@ notebook_login()
 
 - 평가 안내 파일 위치 : `lib/screen/diagnosis_home.dart`
 
+### 로그인
+
+![image](https://github.com/BridZe/bridze/assets/89845380/4525aee1-12b2-4848-9842-28e9e466cb0f)
+
+아이디 : daitso
+비밀번호 : 1234
+
 ### 언어 평가 과정
 
 ![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
