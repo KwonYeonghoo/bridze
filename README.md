@@ -217,7 +217,8 @@ notebook_login()
 # 모델과 서비스 연결
 ## Frontend
 <img width="1129" alt="스크린샷 2023-09-04 오후 12 24 06" src="https://github.com/BridZe/bridze/assets/89845380/e645df51-66ea-4142-b93e-442d4fb2c87b">
-- 차트 파일 위치 : `/bridze/lib/chart/chart_language.dart`
+
+- 차트 파일 위치 : `lib/chart/chart_language.dart`
 
 ![정서 평가 결과](https://github.com/park-hyunbin/BridZe_datacampus/assets/89845380/d846c8d7-8123-4842-9e1d-8c82c5adff66)
 정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다.   
