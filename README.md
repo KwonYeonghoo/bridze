@@ -216,7 +216,13 @@ notebook_login()
 
 # 모델과 서비스 연결
 ## Frontend
-프론트엔드(flutter)에서는 기관 추천 알고리즘을 제공합니다. 임계치에 따라 분류된 언어 평가(상,중,하)와 정서평가(상,중상,중하,하)에 맞는 아동 맞춤 기관을 제공합니다.
+
+![정서 평가 결과](https://github.com/park-hyunbin/BridZe_datacampus/assets/89845380/d846c8d7-8123-4842-9e1d-8c82c5adff66)
+정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다.   
+- 차트 파일 위치 : 'bridze/lib/chart/chart_face.dart
+- provider 위치 : 'bridze/lib/provider/face_evaluation.dart
+ 
+기관 추천 알고리즘을 제공합니다. 임계치에 따라 분류된 언어 평가(상,중,하)와 정서평가(상,중상,중하,하)에 맞는 아동 맞춤 기관을 제공합니다.
 본인이 원하는 지역을 선택하면 해당 지역의 맞춤 기관을 추천받을 수 있습니다.
 - 알고리즘 파일 위치: `/bridze/lib/institution.dart`
 
