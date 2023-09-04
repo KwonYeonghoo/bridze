@@ -225,6 +225,8 @@ notebook_login()
 
 - 차트 파일 위치 : `lib/chart/chart_face.dart`
 - provider 위치 : `birdze/lib/provider/provider.dart`
+
+![기관 추천](https://github.com/BridZe/bridze/assets/89845380/0b13d4ff-d650-474c-92b4-9768d7e44cc7)
  
 기관 추천 알고리즘을 제공합니다. 임계치에 따라 분류된 언어 평가(상,중,하)와 정서평가(상,중상,중하,하)에 맞는 아동 맞춤 기관을 제공합니다.
 본인이 원하는 지역을 선택하면 해당 지역의 맞춤 기관을 추천받을 수 있습니다.
