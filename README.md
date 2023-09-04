@@ -229,7 +229,11 @@ notebook_login()
 
 ![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
 
-화면에 주어진 문장을 아이가 녹음을 합니다.
+화면에 주어진 문장을 아동이 녹음을 합니다.
+
+![부모님 언어](https://github.com/BridZe/bridze/assets/89845380/a90897a7-8695-4846-b736-8e2b6c3e9653)
+
+화면에 주어진 문장을 부모님이 녹음을 합니다.
 
 - 언어 평가 파일 위치 : `lib/screen/diagnosis/`
 
@@ -238,9 +242,14 @@ notebook_login()
 ![유대관계 평가](https://github.com/BridZe/bridze/assets/89845380/f04757b4-f960-458a-9419-61979575d074)
 ![인터뷰](https://github.com/BridZe/bridze/assets/89845380/87194c89-7178-4351-b4b7-fe9f34cd32ae)
 
-화면을 통해 유대관계 평가를 진행하고, 아이의 인터뷰를 녹화합니다.
+화면을 통해 유대관계 평가를 진행하고, 아동의 인터뷰를 녹화합니다.
 
 - 정서 평가 파일 위치 : `lib/screen/diagnosis_face/`
+
+![행복한 표정](https://github.com/BridZe/bridze/assets/89845380/c9ccdd90-c388-4c2a-b7f0-eff433360dfc)
+![행복한 표정2](https://github.com/BridZe/bridze/assets/89845380/628b771a-d1b2-468f-994f-3bcf1e85de02)
+
+- 2번째 정서 평가 파일 위치 : `lib/diagnosis_face2/`
 
 ### 평가 결과
 
@@ -262,7 +271,6 @@ notebook_login()
 아이의 표정을 분류하고, 아이의 인터뷰 답변을 저장합니다.
 - 표정이 분류된 사진 저장 위치 : `lib/save/picture_save.dart`
 - 인터뷰 비디오 저장 위치 : `lib/save/video_save.dart`
-
 
 
 ![기관 추천](https://github.com/BridZe/bridze/assets/89845380/0b13d4ff-d650-474c-92b4-9768d7e44cc7)
