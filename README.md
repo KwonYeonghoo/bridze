@@ -225,14 +225,22 @@ notebook_login()
 
 - 평가 안내 파일 위치 : `lib/screen/diagnosis_home.dart`
 
-### 평가 과정
+### 언어 평가 과정
 
 ![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
 
 화면에 주어진 문장을 아이가 녹음을 합니다.
 
-- 평가 파일 위치 : `lib/screen/diagnosis/`
+- 언어 평가 파일 위치 : `lib/screen/diagnosis/`
 
+### 정서 평가 과정
+
+![유대관계 평가](https://github.com/BridZe/bridze/assets/89845380/f04757b4-f960-458a-9419-61979575d074)
+![인터뷰](https://github.com/BridZe/bridze/assets/89845380/87194c89-7178-4351-b4b7-fe9f34cd32ae)
+
+화면을 통해 유대관계 평가를 진행하고, 아이의 인터뷰를 녹화합니다.
+
+- 정서 평가 파일 위치 : `lib/screen/diagnosis_face/`
 
 ### 평가 결과
 
