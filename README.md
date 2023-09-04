@@ -130,7 +130,7 @@ pipe = pipeline(model="oceanstar/bridze")
 pipe(audio_file)['text']
 위와 같이 모델을 불러 사용할 수 있습니다.
 ```
-### Whisper 실행시 주의사항
+### <중요> Whisper 실행시 주의사항
 from huggingface_hub import notebook_login
 
 notebook_login()
@@ -250,19 +250,19 @@ notebook_login()
 ![행복한 표정2](https://github.com/BridZe/bridze/assets/89845380/628b771a-d1b2-468f-994f-3bcf1e85de02)
 
 아동의 표정을 사진으로 분류합니다.
-- 2번째 정서 평가 파일 위치 : `lib/diagnosis_face2/`
+- 2번째 정서 평가(부모님을 위한 표정 분류표 제공) 파일 위치 : `lib/diagnosis_face2/`
 
 ### 평가 결과
 
 <img width="1129" alt="스크린샷 2023-09-04 오후 12 24 06" src="https://github.com/BridZe/bridze/assets/89845380/e645df51-66ea-4142-b93e-442d4fb2c87b">
 
-언어평가 결과를 차트를 통해 제공합니다. 서버에 저장된 crr알고리즘을 통해 분류된 기준에 따라 상, 중, 하로 분류됩니다.
+언어 평가 결과를 차트를 통해 제공합니다. 서버에 저장된 CRR 알고리즘을 통해 분류된 기준에 따라 상, 중, 하로 분류됩니다.
 
 - 차트 파일 위치 : `lib/chart/chart_language.dart`
 
 ![정서 평가 결과](https://github.com/park-hyunbin/BridZe_datacampus/assets/89845380/d846c8d7-8123-4842-9e1d-8c82c5adff66)
 
-정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다. 
+정서 평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다. 
 
 - 차트 파일 위치 : `lib/chart/chart_face.dart`
 - provider 위치 : `birdze/lib/provider/provider.dart`  
