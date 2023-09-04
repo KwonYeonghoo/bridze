@@ -216,7 +216,11 @@ notebook_login()
 
 # 모델과 서비스 연결
 ## Frontend
+
+### 평가결과
+
 <img width="1129" alt="스크린샷 2023-09-04 오후 12 24 06" src="https://github.com/BridZe/bridze/assets/89845380/e645df51-66ea-4142-b93e-442d4fb2c87b">
+언어평가 결과를 차트를 통해 제공합니다. 서버에 저장된 crr알고리즘을 통해 분류된 기준에 따라 상, 중, 하로 분류됩니다.
 
 - 차트 파일 위치 : `lib/chart/chart_language.dart`
 
