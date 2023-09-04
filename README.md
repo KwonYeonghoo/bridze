@@ -227,6 +227,7 @@ notebook_login()
 
 ![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
 
+화면에 주어진 문장을 아이가 녹음을 합니다.
 
 ### 평가 결과
 
