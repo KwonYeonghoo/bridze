@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bridze/chart/chart_language.dart';
 import 'package:bridze/chart/chart_parent.dart';
 
+// 평가 결과 보기 페이지
 class ProfileApp extends StatefulWidget {
   final String avrScore;
   final String crrScore;
@@ -30,6 +31,7 @@ class _ProfileAppState extends State<ProfileApp> {
   }
 }
 
+// 스크롤 동작을 위한 클래스
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
@@ -51,6 +53,7 @@ class MyPageView extends StatefulWidget {
   State<MyPageView> createState() => _MyPageViewState();
 }
 
+// 차트 불러오기
 class _MyPageViewState extends State<MyPageView> {
   late String crrScore;
   String avrScore = '';
