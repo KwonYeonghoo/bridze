@@ -249,6 +249,7 @@ notebook_login()
 ![행복한 표정](https://github.com/BridZe/bridze/assets/89845380/c9ccdd90-c388-4c2a-b7f0-eff433360dfc)
 ![행복한 표정2](https://github.com/BridZe/bridze/assets/89845380/628b771a-d1b2-468f-994f-3bcf1e85de02)
 
+아동의 표정을 사진으로 분류합니다.
 - 2번째 정서 평가 파일 위치 : `lib/diagnosis_face2/`
 
 ### 평가 결과
@@ -262,6 +263,7 @@ notebook_login()
 ![정서 평가 결과](https://github.com/park-hyunbin/BridZe_datacampus/assets/89845380/d846c8d7-8123-4842-9e1d-8c82c5adff66)
 
 정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다. 
+
 - 차트 파일 위치 : `lib/chart/chart_face.dart`
 - provider 위치 : `birdze/lib/provider/provider.dart`  
 
@@ -269,6 +271,7 @@ notebook_login()
 ![비디오](https://github.com/BridZe/bridze/assets/89845380/d3a77fa9-8331-49f3-aa9d-4cfd100243db)
 
 아이의 표정을 분류하고, 아이의 인터뷰 답변을 저장합니다.
+
 - 표정이 분류된 사진 저장 위치 : `lib/save/picture_save.dart`
 - 인터뷰 비디오 저장 위치 : `lib/save/video_save.dart`
 
@@ -277,6 +280,7 @@ notebook_login()
  
 기관 추천 알고리즘을 제공합니다. 임계치에 따라 분류된 언어 평가(상,중,하)와 정서평가(상,중상,중하,하)에 맞는 아동 맞춤 기관을 제공합니다.
 본인이 원하는 지역을 선택하면 해당 지역의 맞춤 기관을 추천받을 수 있습니다.
+
 - 알고리즘 파일 위치: `/bridze/lib/institution.dart`
 
 ## Backend
