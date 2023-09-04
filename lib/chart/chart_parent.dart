@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+//부모님 언어 평가 차트
 class ChartApp2 extends StatelessWidget {
   const ChartApp2({Key? key}) : super(key: key);
 
@@ -66,6 +67,7 @@ class LanguagePage2State extends State<LanguagePage2> {
     });
   }
 
+// 부모님 언어 평가 상 중 하 평가
   void calculateEvaluation() {
     double score2 = double.tryParse(crrScore) ?? 0.0;
     if (score2 >= 100) {
@@ -86,6 +88,7 @@ class LanguagePage2State extends State<LanguagePage2> {
     );
   }
 
+// 차트와 UI를 빌드하는 함수
   Widget buildChartAndUI() {
     return Stack(
       children: [

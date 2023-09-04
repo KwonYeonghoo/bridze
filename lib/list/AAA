@@ -1,6 +1,6 @@
 import 'package:bridze/widgets/institution.dart';
 
-final List<Institution> gangdong = [
+final List<Institution> AAA = [
   Institution(
     name: '',
     phoneNumber: '',
@@ -20,3 +20,5 @@ final List<Institution> gangdong = [
     address: '',
   ),
 ];
+
+assets/images/1.png
