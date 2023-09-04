@@ -217,9 +217,13 @@ notebook_login()
 # 모델과 서비스 연결
 ## Frontend
 
-### 평가과정안내 
+### 평가 과정 안내 
 
-### 평가결과
+![평가과정안내](https://github.com/BridZe/bridze/assets/89845380/65a1a7d8-7b9c-4f46-9811-f414970c392f)
+
+토리찌라는 캐릭터가 전반적인 평가 과정(언어 평가 과정, 정서 평가 과정)에 대해 음성을 통해 안내합니다.
+
+### 평가 결과
 
 <img width="1129" alt="스크린샷 2023-09-04 오후 12 24 06" src="https://github.com/BridZe/bridze/assets/89845380/e645df51-66ea-4142-b93e-442d4fb2c87b">
 
