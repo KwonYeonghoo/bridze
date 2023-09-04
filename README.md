@@ -223,11 +223,16 @@ notebook_login()
 
 토리찌라는 캐릭터가 전반적인 평가 과정(언어 평가 과정, 정서 평가 과정)에 대해 음성을 통해 안내합니다.
 
+- 평가 안내 파일 위치 : `lib/screen/diagnosis_home.dart`
+
 ### 평가 과정
 
 ![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
 
 화면에 주어진 문장을 아이가 녹음을 합니다.
+
+- 평가 파일 위치 : `lib/screen/diagnosis/`
+
 
 ### 평가 결과
 
@@ -249,6 +254,7 @@ notebook_login()
 아이의 표정을 분류하고, 아이의 인터뷰 답변을 저장합니다.
 - 표정이 분류된 사진 저장 위치 : `lib/save/picture_save.dart`
 - 인터뷰 비디오 저장 위치 : `lib/save/video_save.dart`
+
 
 
 ![기관 추천](https://github.com/BridZe/bridze/assets/89845380/0b13d4ff-d650-474c-92b4-9768d7e44cc7)
