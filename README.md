@@ -223,6 +223,11 @@ notebook_login()
 
 토리찌라는 캐릭터가 전반적인 평가 과정(언어 평가 과정, 정서 평가 과정)에 대해 음성을 통해 안내합니다.
 
+### 평가 과정
+
+![5-7](https://github.com/BridZe/bridze/assets/89845380/59e41cbf-e224-4ee6-abdc-7f848d647aa0)
+
+
 ### 평가 결과
 
 <img width="1129" alt="스크린샷 2023-09-04 오후 12 24 06" src="https://github.com/BridZe/bridze/assets/89845380/e645df51-66ea-4142-b93e-442d4fb2c87b">
