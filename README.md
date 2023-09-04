@@ -225,10 +225,15 @@ notebook_login()
 - 차트 파일 위치 : `lib/chart/chart_language.dart`
 
 ![정서 평가 결과](https://github.com/park-hyunbin/BridZe_datacampus/assets/89845380/d846c8d7-8123-4842-9e1d-8c82c5adff66)
-정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다.   
-
+정서평가 결과를 차트를 통해 제공합니다. 유대관계 점수 데이터가 provider에 저장되고 분류된 기준에 따라 상, 중상, 중하, 하로 분류됩니다. 
 - 차트 파일 위치 : `lib/chart/chart_face.dart`
-- provider 위치 : `birdze/lib/provider/provider.dart`
+- provider 위치 : `birdze/lib/provider/provider.dart`  
+
+![감정을 나타내는 표정들 ](https://github.com/BridZe/bridze/assets/89845380/f2b9eb7f-3bc7-4615-aa65-582672acbeec)
+아이의 표정을 분류하고, 아이의 인터뷰 답변을 저장합니다.
+- 표정이 분류된 사진 저장 위치 : `lib/save/picture_save.dart`
+- 인터뷰 비디오 저장 위치 : `lib/save/video_save.dart`
+
 
 ![기관 추천](https://github.com/BridZe/bridze/assets/89845380/0b13d4ff-d650-474c-92b4-9768d7e44cc7)
  
