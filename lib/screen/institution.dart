@@ -102,6 +102,12 @@ import 'package:bridze/list/gyeongsang_north/seongju_1.dart';
 import 'package:bridze/list/gyeongsang_north/seongju_2.dart';
 import 'package:bridze/list/gyeongsang_north/uiseong_2.dart';
 import 'package:bridze/list/gyeongsang_north/uljin_2.dart';
+import 'package:bridze/list/gyeongsang_north/yecheon_1.dart';
+import 'package:bridze/list/gyeongsang_north/yeongcheon_1.dart';
+import 'package:bridze/list/gyeongsang_north/yeongcheon_2.dart';
+import 'package:bridze/list/gyeongsang_north/yeongdeok_1.dart';
+import 'package:bridze/list/gyeongsang_north/yeongju_1.dart';
+import 'package:bridze/list/gyeongsang_north/yeongju_2.dart';
 import 'package:bridze/list/seoul/dobong_1.dart';
 import 'package:bridze/list/seoul/dobong_2.dart';
 import 'package:bridze/list/seoul/dongdaemun_1.dart';
@@ -350,14 +356,20 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
   Widget gyeongjuCarousel2 = CityCarousel(cities: gyeongju2);
   Widget gyeongsanCarousel = CityCarousel(cities: gyeongsan1);
   Widget gyeongsanCarousel2 = CityCarousel(cities: gyeongsan2);
+  Widget yeongcheonCarousel = CityCarousel(cities: yeongcheon1);
+  Widget yeongcheonCarousel2 = CityCarousel(cities: yeongcheon2);
   Widget pohangCarousel = CityCarousel(cities: pohang1);
   Widget pohangCarousel2 = CityCarousel(cities: pohang2);
   Widget seongjuCarousel = CityCarousel(cities: seongju1);
   Widget seongjuCarousel2 = CityCarousel(cities: seongju2);
+  Widget yeongjuCarousel = CityCarousel(cities: yeongju1);
+  Widget yeongjuCarousel2 = CityCarousel(cities: yeongju2);
   Widget sangjuCarousel = CityCarousel(cities: sangju1);
   Widget uiseongCarousel2 = CityCarousel(cities: uiseong2);
   Widget uljinCarousel2 = CityCarousel(cities: uljin2);
   Widget eumseongCarousel = CityCarousel(cities: eumseong1);
+  Widget yecheonCarousel = CityCarousel(cities: yecheon1);
+  Widget yeongdeokCarousel = CityCarousel(cities: yeongdeok1);
   String evaluation = '';
   String recommendation = '';
   String recommendation2 = '';
@@ -1354,6 +1366,20 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                               fontSize: 20,
                             )),
                       ),
+                    if (selectedCity == '영덕군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      yeongdeokCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '영덕군')
+                      const Center(
+                        child: Text(
+                            '영덕군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
                     if (selectedCity == '증평군' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       JeungpyeongCarousel,
@@ -1377,6 +1403,20 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       const Center(
                         child: Text(
                             '예산군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '예천군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      yecheonCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '예천군')
+                      const Center(
+                        child: Text(
+                            '예천군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
                             style: TextStyle(
                               fontFamily: 'BMJUA',
                               fontSize: 20,
@@ -1480,6 +1520,20 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                             recommendation == '기관을 선택해주세요') &&
                         selectedCity == '성주군')
                       seongjuCarousel2,
+                    if (selectedCity == '영천시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      yeongcheonCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '영천시')
+                      yeongcheonCarousel2,
+                    if (selectedCity == '영주시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      yeongjuCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '영주시')
+                      yeongjuCarousel2,
                     if (selectedCity == '상주시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       sangjuCarousel,
