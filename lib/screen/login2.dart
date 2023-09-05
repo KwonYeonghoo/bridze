@@ -3,6 +3,7 @@ import 'package:bridze/screen/institution.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// 평가 결과와 기관 추천 페이지 구현
 class Login2Page extends StatefulWidget {
   const Login2Page({Key? key}) : super(key: key);
 
@@ -187,9 +188,7 @@ class _Login2PageState extends State<Login2Page> {
                                       textAlign: TextAlign.center,
                                     ),
                                     GestureDetector(
-                                      onTap: () {
-                                        // Handle the action when tapped
-                                      },
+                                      onTap: () {},
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(top: 20.0),

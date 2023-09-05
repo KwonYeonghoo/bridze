@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-// 언어 평가 결과 차트 (5-7세용)
 class ChartApp extends StatelessWidget {
   const ChartApp({Key? key}) : super(key: key);
 
@@ -56,7 +55,7 @@ class LanguagePageState extends State<LanguagePage> {
         const Color.fromRGBO(254, 202, 202, 1.0),
       ),
       ChartData(
-        '아린이점수',
+        '아동 점수',
         parsedScore,
         const Color.fromARGB(255, 241, 133, 145),
       ),
@@ -64,7 +63,6 @@ class LanguagePageState extends State<LanguagePage> {
     _tooltip = TooltipBehavior(enable: true);
   }
 
-// 5-7세 평가 결과 상중하 평가
   Future<void> calculateEvaluation() async {
     double score = double.tryParse(avrScore) ?? 0.0;
     if (score >= 100) {
@@ -103,7 +101,7 @@ class LanguagePageState extends State<LanguagePage> {
       ),
     );
   }
-// 차트와 UI를 빌드
+
   Widget buildChartAndUI() {
     return Stack(
       children: [
@@ -120,7 +118,7 @@ class LanguagePageState extends State<LanguagePage> {
               child: Column(
                 children: [
                   Text(
-                    '아린이의 언어평가 결과',
+                    '언어평가 결과',
                     style: TextStyle(
                       fontFamily: 'BMJUA',
                       fontSize: 50,
@@ -238,7 +236,6 @@ class LanguagePageState extends State<LanguagePage> {
   }
 }
 
-// 차트 데이터 클래스
 class ChartData {
   final String x;
   final double y;

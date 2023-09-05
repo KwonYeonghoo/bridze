@@ -1,4 +1,5 @@
 import 'package:bridze/diagnosis_face2/diagnosis_angry_3.dart';
+import 'package:bridze/widgets/audio_angry_2.dart';
 import 'package:flutter/material.dart';
 
 class DiagnosisAngry2Page extends StatefulWidget {
@@ -9,6 +10,22 @@ class DiagnosisAngry2Page extends StatefulWidget {
 }
 
 class _DiagnosisAngry2PageState extends State<DiagnosisAngry2Page> {
+  AudioAngry2 myAudioPlayer = AudioAngry2();
+
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    myAudioPlayer.initAudio().then((_) {
+      setState(() {
+        isPlaying = true;
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
