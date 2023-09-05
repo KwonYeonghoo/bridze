@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:http/http.dart' as http;
 
-// 비언어적 평가 차트
 class ChartFaceApp extends StatefulWidget {
   const ChartFaceApp({super.key});
 
@@ -14,7 +13,6 @@ class ChartFaceApp extends StatefulWidget {
   State<ChartFaceApp> createState() => ChartFaceAppState();
 }
 
-// provider를 통해 부모와의 유대관계 점수를 가져옵니다.
 class ChartFaceAppState extends State<ChartFaceApp> {
   double getRelationshipScoreFromProvider() {
     return context.watch<TotalScoreProvider>().relationshipScore;
@@ -89,7 +87,6 @@ class _FacePageState extends State<FacePage> {
     _fetchImage();
   }
 
-//점수 상 중 하 평가 함수
   Future<void> calculateEvaluation2(TotalScoreProvider provider) async {
     double relationshipScore = provider.relationshipScore;
 

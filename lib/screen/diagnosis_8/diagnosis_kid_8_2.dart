@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../model/audio_recording.dart';
-import '../../model/avr.dart';
+import '../../model/crr_2.dart';
 
 class EightReadPage extends StatefulWidget {
   const EightReadPage({Key? key}) : super(key: key);
@@ -79,7 +79,7 @@ class _EightReadPageState extends State<EightReadPage> {
                 key: Key('audio_recorder8'),
               )),
               const Center(
-                child: Score(
+                child: Score3(
                   initialValue: '8',
                   number: 0,
                 ),

@@ -1,6 +1,7 @@
 import 'package:bridze/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
 
+// 로그인 페이지 구현
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 

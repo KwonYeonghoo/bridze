@@ -1,9 +1,31 @@
 import 'package:bridze/diagnosis_face2/diagnosis_sad_2.dart';
+import 'package:bridze/widgets/audio_sad.dart';
 import 'package:flutter/material.dart';
 
-class DiagnosisSad1Page extends StatelessWidget {
+class DiagnosisSad1Page extends StatefulWidget {
   const DiagnosisSad1Page({Key? key, required String avrScore})
       : super(key: key);
+
+  @override
+  State<DiagnosisSad1Page> createState() => _DiagnosisSad1PageState();
+}
+
+class _DiagnosisSad1PageState extends State<DiagnosisSad1Page> {
+  AudioSad myAudioPlayer = AudioSad();
+
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    myAudioPlayer.initAudio().then((_) {
+      setState(() {
+        isPlaying = true;
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
