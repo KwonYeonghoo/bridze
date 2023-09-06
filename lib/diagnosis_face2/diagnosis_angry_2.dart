@@ -89,6 +89,7 @@ class _DiagnosisAngry2PageState extends State<DiagnosisAngry2Page> {
                           children: [
                             GestureDetector(
                               onTap: () {
+                                myAudioPlayer.dispose();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

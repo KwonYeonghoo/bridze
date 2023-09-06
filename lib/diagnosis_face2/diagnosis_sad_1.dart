@@ -88,6 +88,7 @@ class _DiagnosisSad1PageState extends State<DiagnosisSad1Page> {
                     const EdgeInsets.fromLTRB(0, 0, 40, 40), // Add spacing here
                 child: GestureDetector(
                   onTap: () {
+                    myAudioPlayer.dispose();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -112,6 +112,9 @@ import 'package:bridze/list/gyeongsang_north/yeongcheon_2.dart';
 import 'package:bridze/list/gyeongsang_north/yeongdeok_1.dart';
 import 'package:bridze/list/gyeongsang_north/yeongju_1.dart';
 import 'package:bridze/list/gyeongsang_north/yeongju_2.dart';
+import 'package:bridze/list/gyeongsang_south/yangsan_2.dart';
+import 'package:bridze/list/jeju/jeju_1.dart';
+import 'package:bridze/list/jeju/jeju_2.dart';
 import 'package:bridze/list/jeolla_north/gimje_2.dart';
 import 'package:bridze/list/jeolla_north/iksan_1.dart';
 import 'package:bridze/list/jeolla_north/iksan_2.dart';
@@ -391,6 +394,9 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
   Widget imsilCarousel2 = CityCarousel(cities: imsil2);
   Widget gimjeCarousel2 = CityCarousel(cities: gimje2);
   Widget sunchangCarousel2 = CityCarousel(cities: sunchang2);
+  Widget yangsanCarousel2 = CityCarousel(cities: yangsan2);
+  Widget jejuCarousel = CityCarousel(cities: jeju1);
+  Widget jejuCarousel2 = CityCarousel(cities: jeju2);
   String evaluation = '';
   String recommendation = '';
   String recommendation2 = '';
@@ -1750,6 +1756,13 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                             recommendation == '기관을 선택해주세요') &&
                         selectedCity == '임실군')
                       imsilCarousel2,
+                    if (selectedCity == '제주시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      jejuCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '제주시')
+                      jejuCarousel2,
                     CarouselSlider(
                       options: CarouselOptions(
                         height: 50,

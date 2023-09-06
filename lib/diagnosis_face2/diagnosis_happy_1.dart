@@ -94,6 +94,7 @@ class _DiagnosisHappy1PageState extends State<DiagnosisHappy1Page> {
                         0, 0, 40, 40), // Add spacing here
                     child: GestureDetector(
                       onTap: () {
+                        myAudioPlayer.dispose();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
