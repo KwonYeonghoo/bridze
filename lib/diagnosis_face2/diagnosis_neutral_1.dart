@@ -1,9 +1,31 @@
 import 'package:bridze/diagnosis_face2/diagnosis_neutral_2.dart';
+import 'package:bridze/widgets/audio_neutral.dart';
 import 'package:flutter/material.dart';
 
-class DiagnosisNeutral1Page extends StatelessWidget {
+class DiagnosisNeutral1Page extends StatefulWidget {
   const DiagnosisNeutral1Page({Key? key, required String avrScore})
       : super(key: key);
+
+  @override
+  State<DiagnosisNeutral1Page> createState() => _DiagnosisNeutral1PageState();
+}
+
+class _DiagnosisNeutral1PageState extends State<DiagnosisNeutral1Page> {
+  AudioNeutral myAudioPlayer = AudioNeutral();
+
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    myAudioPlayer.initAudio().then((_) {
+      setState(() {
+        isPlaying = true;
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +88,7 @@ class DiagnosisNeutral1Page extends StatelessWidget {
                     const EdgeInsets.fromLTRB(0, 0, 40, 40), // Add spacing here
                 child: GestureDetector(
                   onTap: () {
+                    myAudioPlayer.dispose();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

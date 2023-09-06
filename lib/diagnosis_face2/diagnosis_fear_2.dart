@@ -1,5 +1,5 @@
-import 'package:bridze/widgets/audio_kid_13.dart';
 import 'package:bridze/diagnosis_face2/diagnosis_fear_3.dart';
+import 'package:bridze/widgets/audio_fear_2.dart';
 import 'package:flutter/material.dart';
 
 class DiagnosisFear2Page extends StatefulWidget {
@@ -10,7 +10,7 @@ class DiagnosisFear2Page extends StatefulWidget {
 }
 
 class _DiagnosisFear2PageState extends State<DiagnosisFear2Page> {
-  AudioKid13 myAudioPlayer = AudioKid13();
+  AudioFear1 myAudioPlayer = AudioFear1();
   bool isPlaying = false;
 
   @override
@@ -87,6 +87,7 @@ class _DiagnosisFear2PageState extends State<DiagnosisFear2Page> {
                           children: [
                             GestureDetector(
                               onTap: () {
+                                myAudioPlayer.dispose();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

@@ -87,6 +87,7 @@ class _DiagnosisHappy2PageState extends State<DiagnosisHappy2Page> {
                           children: [
                             GestureDetector(
                               onTap: () {
+                                myAudioPlayer.dispose();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

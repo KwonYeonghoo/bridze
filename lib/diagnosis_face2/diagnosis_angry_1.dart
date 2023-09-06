@@ -88,6 +88,7 @@ class _DiagnosisAngry1PageState extends State<DiagnosisAngry1Page> {
                     const EdgeInsets.fromLTRB(0, 0, 40, 40), // Add spacing here
                 child: GestureDetector(
                   onTap: () {
+                    myAudioPlayer.dispose();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

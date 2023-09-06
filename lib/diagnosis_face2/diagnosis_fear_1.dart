@@ -1,9 +1,31 @@
 import 'package:bridze/diagnosis_face2/diagnosis_fear_2.dart';
+import 'package:bridze/widgets/audio_fear.dart';
 import 'package:flutter/material.dart';
 
-class DiagnosisFear1Page extends StatelessWidget {
+class DiagnosisFear1Page extends StatefulWidget {
   const DiagnosisFear1Page({Key? key, required String avrScore})
       : super(key: key);
+
+  @override
+  State<DiagnosisFear1Page> createState() => _DiagnosisFear1PageState();
+}
+
+class _DiagnosisFear1PageState extends State<DiagnosisFear1Page> {
+  AudioFear myAudioPlayer = AudioFear();
+
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    myAudioPlayer.initAudio().then((_) {
+      setState(() {
+        isPlaying = true;
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +88,7 @@ class DiagnosisFear1Page extends StatelessWidget {
                     const EdgeInsets.fromLTRB(0, 0, 40, 40), // Add spacing here
                 child: GestureDetector(
                   onTap: () {
+                    myAudioPlayer.dispose();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
