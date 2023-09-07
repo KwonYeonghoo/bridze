@@ -10,13 +10,13 @@ final List<Institution> mapo1 = [
   Institution(
     name: '코이 언어발달연구소',
     phoneNumber: '02-6958-8011',
-    imagePath: '',
+    imagePath: 'assets/images/mapo2.png',
     address: '서울 마포구 독막로 98 두산위브아파트 상가2층',
   ),
   Institution(
     name: '언어치료AAC센터 사람과소통',
     phoneNumber: '070-8118-7554',
-    imagePath: '',
+    imagePath: 'assets/images/mapo3.png',
     address: '서울 마포구 월드컵로32길 41-3',
   ),
 ];

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-//언어 부모님 평가 차트 페이지
+//언어 부모님 평가 차트 페이지입니다.
 class ChartApp2 extends StatelessWidget {
   const ChartApp2({Key? key}) : super(key: key);
 
@@ -44,7 +44,6 @@ class LanguagePage2State extends State<LanguagePage2> {
     initializeChartData();
   }
 
-//shared_preferences를 이용하여 부모님 점수를 가져옴
   Future<void> initializeChartData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? score2 = prefs.getString('globalcrrScore');
@@ -68,7 +67,6 @@ class LanguagePage2State extends State<LanguagePage2> {
     });
   }
 
-////Evaluation을 계산하는 알고리즘
   void calculateEvaluation() {
     double score2 = double.tryParse(crrScore) ?? 0.0;
     if (score2 >= 100) {
@@ -224,7 +222,6 @@ class LanguagePage2State extends State<LanguagePage2> {
   }
 }
 
-//차트 데이터
 class ChartData {
   final String x;
   final double y;

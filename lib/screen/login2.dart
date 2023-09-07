@@ -13,8 +13,8 @@ class Login2Page extends StatefulWidget {
 
 class _Login2PageState extends State<Login2Page> {
   @override
-  String avrScore = '';
-  String crrScore = '';
+  String avrScore = ''; // avr 점수를 저장하는 변수
+  String crrScore = ''; // crr 점수를 저장하는 변수
 
   @override
   void initState() {
@@ -23,7 +23,8 @@ class _Login2PageState extends State<Login2Page> {
   }
 
   Future<void> _loadAvrScore() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences prefs = await SharedPreferences
+        .getInstance(); //SharedPreferences를 이용하여 avrScore를 저장합니다.
     setState(() {
       avrScore = prefs.getString('globalavrScore') ?? '';
     });
@@ -145,7 +146,7 @@ class _Login2PageState extends State<Login2Page> {
                                           children: [
                                             SizedBox(),
                                             Text(
-                                              "평가 결과 >",
+                                              "평가 결과 >", // 평가 결과 페이지로 이동 하는 버튼입니다.
                                               style: TextStyle(
                                                 fontSize: 30,
                                                 fontFamily: "BMJUA",
@@ -198,7 +199,7 @@ class _Login2PageState extends State<Login2Page> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const InstitutionRecommend()), // Replace with the appropriate widget
+                                                      const InstitutionRecommend()), // 기관 추천 페이지로 이동하는 버튼입니다.
                                             );
                                           },
                                           child: Container(

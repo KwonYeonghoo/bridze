@@ -2,7 +2,6 @@ import 'package:bridze/diagnosis_face2/diagnosis_fear_2.dart';
 import 'package:bridze/widgets/audio_fear.dart';
 import 'package:flutter/material.dart';
 
-//두려운 표정을 알려줍니다.
 class DiagnosisFear1Page extends StatefulWidget {
   const DiagnosisFear1Page({Key? key, required String avrScore})
       : super(key: key);
@@ -12,7 +11,6 @@ class DiagnosisFear1Page extends StatefulWidget {
 }
 
 class _DiagnosisFear1PageState extends State<DiagnosisFear1Page> {
-  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioFear myAudioPlayer = AudioFear();
 
   bool isPlaying = false;
@@ -23,7 +21,8 @@ class _DiagnosisFear1PageState extends State<DiagnosisFear1Page> {
     myAudioPlayer.initAudio().then((_) {
       setState(() {
         isPlaying = true;
-        myAudioPlayer.toggleAudio();
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
       });
     });
   }

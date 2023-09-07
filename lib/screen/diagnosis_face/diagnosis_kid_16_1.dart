@@ -1,3 +1,7 @@
+// 아이의 정서 평가 다섯 번째 질문이 나옵니다.
+// 질문의 음성을 듣고 질문 하단에 해당하는 점수 버튼을 누릅니다.
+// 오른쪽 하단에 화살표를 누르면 다음 페이지로 넘어갑니다.
+
 import 'package:bridze/provider/face_evaluation.dart';
 import 'package:bridze/diagnosis_face2/diagnosis_kid_20.dart';
 import 'package:bridze/widgets/audio_kid_5.dart';

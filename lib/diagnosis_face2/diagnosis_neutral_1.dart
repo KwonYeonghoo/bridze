@@ -2,7 +2,6 @@ import 'package:bridze/diagnosis_face2/diagnosis_neutral_2.dart';
 import 'package:bridze/widgets/audio_neutral.dart';
 import 'package:flutter/material.dart';
 
-//무표정한 표정을 알려줍니다.
 class DiagnosisNeutral1Page extends StatefulWidget {
   const DiagnosisNeutral1Page({Key? key, required String avrScore})
       : super(key: key);
@@ -12,7 +11,6 @@ class DiagnosisNeutral1Page extends StatefulWidget {
 }
 
 class _DiagnosisNeutral1PageState extends State<DiagnosisNeutral1Page> {
-  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioNeutral myAudioPlayer = AudioNeutral();
 
   bool isPlaying = false;
@@ -23,7 +21,8 @@ class _DiagnosisNeutral1PageState extends State<DiagnosisNeutral1Page> {
     myAudioPlayer.initAudio().then((_) {
       setState(() {
         isPlaying = true;
-        myAudioPlayer.toggleAudio();
+        myAudioPlayer
+            .toggleAudio(); // Start playing the audio when initialization is complete
       });
     });
   }

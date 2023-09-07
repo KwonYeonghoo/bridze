@@ -3,7 +3,6 @@ import 'package:bridze/model/execute.dart';
 import 'package:flutter/material.dart';
 import '../model/picture.dart';
 
-//무표정한 표정을 찍는 카메라입니다.
 class DiagnosisNeutral3Page extends StatelessWidget {
   const DiagnosisNeutral3Page({Key? key}) : super(key: key);
 

@@ -5,7 +5,7 @@ final List<Institution> sokcho2 = [
     name: '이레발달센터',
     phoneNumber: '033-632-2025',
     imagePath: 'assets/images/sokcho4.png',
-    address: '강원 속초시 도리원1길 27-1 1층 이레발달센터',
+    address: '강원 속초시 도리원1길 27-1 1층',
   ),
   Institution(
     name: '풀이음언어심리상담센터',

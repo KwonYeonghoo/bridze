@@ -13,10 +13,4 @@ final List<Institution> yangpyeong1 = [
     imagePath: 'assets/images/yangpyeong2.png',
     address: '경기 양평군 양평읍 중앙로91번길 20',
   ),
-  Institution(
-    name: '근처 기관이 적습니다. 더 많은 기관의 추천을 원하시면 다른 지역을 선택해주세요 :)',
-    phoneNumber: '',
-    imagePath: '',
-    address: '',
-  ),
 ];
