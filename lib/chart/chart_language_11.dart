@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+//언어 평가 차트 페이지 11세부터 13세
 class ChartApp4 extends StatelessWidget {
   const ChartApp4({Key? key}) : super(key: key);
 
@@ -43,6 +44,7 @@ class LanguagePage4State extends State<LanguagePage4> {
     initializeChartData();
   }
 
+//sharedPreferences를 통해 언어 평가 점수를 가져옵니다.
   Future<void> initializeChartData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? Score4 = prefs.getString('globalcrrScore');
@@ -66,6 +68,7 @@ class LanguagePage4State extends State<LanguagePage4> {
     });
   }
 
+//Evaluation을 계산하는 알고리즘
   void calculateEvaluation() {
     double Score4 = double.tryParse(crrScore) ?? 0.0;
     if (Score4 >= 100) {

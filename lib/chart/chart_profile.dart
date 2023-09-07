@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bridze/chart/chart_language.dart';
 import 'package:bridze/chart/chart_parent.dart';
 
+//차트를 전체적으로 보여주는 페이지
 class ProfileApp extends StatefulWidget {
   final String avrScore;
   final String crrScore;
@@ -30,6 +31,7 @@ class _ProfileAppState extends State<ProfileApp> {
   }
 }
 
+//오른쪽으로 스크롤 가능하게 하는 코드
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
@@ -61,9 +63,9 @@ class _MyPageViewState extends State<MyPageView> {
     return Scaffold(
       body: PageView(
         children: const [
-          ChartApp(),
-          ChartApp2(),
-          ChartFaceApp(),
+          ChartApp(), //언어평가 차트
+          ChartApp2(), //부모평가 차트
+          ChartFaceApp(), //정서평가 차트
         ],
       ),
     );

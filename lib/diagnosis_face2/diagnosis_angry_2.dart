@@ -10,6 +10,7 @@ class DiagnosisAngry2Page extends StatefulWidget {
 }
 
 class _DiagnosisAngry2PageState extends State<DiagnosisAngry2Page> {
+  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioAngry2 myAudioPlayer = AudioAngry2();
 
   bool isPlaying = false;
@@ -20,8 +21,7 @@ class _DiagnosisAngry2PageState extends State<DiagnosisAngry2Page> {
     myAudioPlayer.initAudio().then((_) {
       setState(() {
         isPlaying = true;
-        myAudioPlayer
-            .toggleAudio(); // Start playing the audio when initialization is complete
+        myAudioPlayer.toggleAudio();
       });
     });
   }

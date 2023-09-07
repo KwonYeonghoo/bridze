@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:http/http.dart' as http;
 
+//정서 평가 차트 페이지
 class ChartFaceApp extends StatefulWidget {
   const ChartFaceApp({super.key});
 
@@ -18,6 +19,7 @@ class ChartFaceAppState extends State<ChartFaceApp> {
     return context.watch<TotalScoreProvider>().relationshipScore;
   }
 
+//provider를 통해 관계 점수를 가져옵니다.
   @override
   Widget build(BuildContext context) {
     final relationshipScore = getRelationshipScoreFromProvider();
@@ -30,6 +32,7 @@ class ChartFaceAppState extends State<ChartFaceApp> {
   }
 }
 
+//relationshipScore를 받아서 정서 평가 차트를 그리는 페이지
 class FacePage extends StatefulWidget {
   final double relationshipScore;
 
@@ -42,7 +45,7 @@ class FacePage extends StatefulWidget {
 class _FacePageState extends State<FacePage> {
   late List<_ChartData> data;
   late TooltipBehavior _tooltip;
-  double relationshipScore = 0.0; // Initialize the relationshipScore
+  double relationshipScore = 0.0;
   String evaluation2 = '';
 
   String serverUrl = 'https://daitso.run.goorm.site/download/chart/image';
@@ -87,6 +90,7 @@ class _FacePageState extends State<FacePage> {
     _fetchImage();
   }
 
+//Evaluation을 계산하는 알고리즘
   Future<void> calculateEvaluation2(TotalScoreProvider provider) async {
     double relationshipScore = provider.relationshipScore;
 
@@ -111,6 +115,7 @@ class _FacePageState extends State<FacePage> {
     prefs.setString('evaluation2', evaluation2);
   }
 
+//정서평과 결과 페이지 레이아웃
   @override
   Widget build(BuildContext context) {
     return Scaffold(

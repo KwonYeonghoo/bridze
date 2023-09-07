@@ -2,6 +2,7 @@ import 'package:bridze/diagnosis_face2/diagnosis_sad_2.dart';
 import 'package:bridze/widgets/audio_sad.dart';
 import 'package:flutter/material.dart';
 
+//슬픈 표정을 알려줍니다.
 class DiagnosisSad1Page extends StatefulWidget {
   const DiagnosisSad1Page({Key? key, required String avrScore})
       : super(key: key);
@@ -11,6 +12,7 @@ class DiagnosisSad1Page extends StatefulWidget {
 }
 
 class _DiagnosisSad1PageState extends State<DiagnosisSad1Page> {
+  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioSad myAudioPlayer = AudioSad();
 
   bool isPlaying = false;
@@ -21,8 +23,7 @@ class _DiagnosisSad1PageState extends State<DiagnosisSad1Page> {
     myAudioPlayer.initAudio().then((_) {
       setState(() {
         isPlaying = true;
-        myAudioPlayer
-            .toggleAudio(); // Start playing the audio when initialization is complete
+        myAudioPlayer.toggleAudio();
       });
     });
   }
