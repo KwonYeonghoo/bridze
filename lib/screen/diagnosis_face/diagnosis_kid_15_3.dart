@@ -1,3 +1,7 @@
+// 카메라에 아이의 얼굴이 비치는지 확인합니다
+// 영상 화면 하단에 카메라 아이콘을 눌러 영상을 녹화후 파란색으로 변하면 녹화를 종료합니다
+// 오른쪽 하단에 finish 버튼을 누르면 다음 페이지로 넘어갑니다
+
 import 'package:bridze/screen/diagnosis_face/diagnosis_kid_16_1.dart';
 import 'package:flutter/material.dart';
 import '../../model/video.dart';

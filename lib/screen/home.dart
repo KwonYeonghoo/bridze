@@ -1,3 +1,4 @@
+//토리찌가 홈에 나와서 사용자에게 평가방법을 알려줍니다.
 import 'dart:async';
 import 'package:bridze/diagnosis_home_2.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  //토리찌의 음성을 재생합니다.
   MyAudioPlayer myAudioPlayer = MyAudioPlayer();
   bool isPlaying = false;
   String greetingText =
@@ -28,6 +30,7 @@ class HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  //15초간 문장을 띄워줍니다.
   @override
   void initState() {
     super.initState();

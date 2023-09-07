@@ -96,7 +96,7 @@ class _ScoreState extends State<Score> {
               style: TextStyle(
                 fontSize: 15,
                 fontFamily: 'BMJUA',
-                color: Colors.white, 
+                color: Colors.white, // Change the text color as needed
               ),
             ),
           ),

@@ -64,7 +64,7 @@ class LanguagePageState extends State<LanguagePage> {
     _tooltip = TooltipBehavior(enable: true);
   }
 
-//Evaluation을 계산하는 알고리즘
+  //Evaluation을 계산하는 알고리즘
   Future<void> calculateEvaluation() async {
     double score = double.tryParse(avrScore) ?? 0.0;
     if (score >= 100) {

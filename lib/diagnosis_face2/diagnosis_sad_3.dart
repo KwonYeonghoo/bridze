@@ -4,7 +4,6 @@ import 'package:bridze/model/execute2.dart';
 import 'package:flutter/material.dart';
 import '../../model/picture.dart';
 
-//슬픈 표정을 찍는 카메라입니다.
 class DiagnosisSad3Page extends StatelessWidget {
   const DiagnosisSad3Page({Key? key}) : super(key: key);
 

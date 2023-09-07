@@ -1,3 +1,6 @@
+// 5~7세 아이의 언어 평가를 설명하는 시작화면입니다.
+// 오른쪽 하단에 화살표 버튼을 눌러 다음 페이지로 넘어갑니다.
+
 import 'package:bridze/screen/diagnosis_5/diagnosis_kid_5_2.dart';
 import 'package:flutter/material.dart';
 

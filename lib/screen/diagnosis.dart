@@ -1,3 +1,6 @@
+// 아이와 부모님의 언어 및 정서 평가를 선택하는 화면입니다
+// 해당하는 아이콘을 누르면 해당 평가 첫화면으로 넘어갑니다.
+
 import 'package:bridze/screen/diagnosis_face/diagnosis_kid_11.dart';
 import 'package:bridze/screen/diagnosis_kid.dart';
 import 'package:bridze/screen/diagnosis_mother/diagnosis_mother_1.dart';

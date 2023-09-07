@@ -17,6 +17,6 @@ final List<Institution> gunpo2 = [
     name: '또바기발달연구소',
     phoneNumber: '0507-1386-0728',
     imagePath: 'assets/images/gunpo6.png',
-    address: '경기 군포시 산본로323번길 16-29 청송프라자 506호 또바기발달연구소',
+    address: '경기 군포시 산본로323번길 16-29 청송프라자 506호',
   ),
 ];

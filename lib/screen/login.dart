@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     String validPassword = "1234";
 
     if (enteredUsername == validUsername && enteredPassword == validPassword) {
-      // Successful login, navigate to the next screen or perform any other action
+      // 로그인에 성공할 경우, 진단평가 페이지로 이동
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -26,7 +26,6 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
     } else {
-      // Failed login, show an error message or perform any other action
       print("Login failed!");
     }
   }

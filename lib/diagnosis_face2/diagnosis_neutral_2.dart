@@ -10,7 +10,6 @@ class DiagnosisNeutral2Page extends StatefulWidget {
 }
 
 class _DiagnosisNeutral2PageState extends State<DiagnosisNeutral2Page> {
-  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioNeutral1 myAudioPlayer = AudioNeutral1();
   bool isPlaying = false;
 

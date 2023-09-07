@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../model/picture.dart';
 import '../model/execute.dart';
 
-//happy 페이지에서 켜지는 카메라 화면입니다.
 class DiagnosisHappy3Page extends StatelessWidget {
   const DiagnosisHappy3Page({Key? key}) : super(key: key);
 

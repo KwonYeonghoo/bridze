@@ -1,3 +1,6 @@
+// 앞서 선택한 점수에 이유를 묻는 음성이 나옵니다.
+// 오른쪽 하단에 화살표를 누르면 다음 페이지로 넘어갑니다.
+
 import 'package:bridze/widgets/audio_kid_13.dart';
 import 'package:flutter/material.dart';
 import 'package:bridze/screen/diagnosis_face/diagnosis_kid_14_3.dart';
