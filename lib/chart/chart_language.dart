@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+//언어 평가 차트 페이지 5세에서 7세
 class ChartApp extends StatelessWidget {
   const ChartApp({Key? key}) : super(key: key);
 
@@ -63,6 +64,7 @@ class LanguagePageState extends State<LanguagePage> {
     _tooltip = TooltipBehavior(enable: true);
   }
 
+//Evaluation을 계산하는 알고리즘
   Future<void> calculateEvaluation() async {
     double score = double.tryParse(avrScore) ?? 0.0;
     if (score >= 100) {

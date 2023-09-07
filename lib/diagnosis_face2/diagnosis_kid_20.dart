@@ -1,6 +1,7 @@
 import 'package:bridze/diagnosis_face2/diagnosis_happy_1.dart';
 import 'package:flutter/material.dart';
 
+//토리찌와 함께하는 표정놀이 페이지를 안내합니다.
 class DiagnosisKid20Page extends StatelessWidget {
   const DiagnosisKid20Page({Key? key, required String avrScore})
       : super(key: key);

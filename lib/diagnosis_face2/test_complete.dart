@@ -3,6 +3,7 @@ import 'package:bridze/provider/face_evaluation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+//test 완료 페이지
 class DiagnosisEndPage extends StatelessWidget {
   final String avrScore;
 

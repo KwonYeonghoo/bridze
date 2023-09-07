@@ -3,6 +3,7 @@ import 'package:bridze/model/execute.dart';
 import 'package:flutter/material.dart';
 import '../../model/picture.dart';
 
+//fear 페이지에서 켜지는 카메라 화면입니다.
 class DiagnosisFear3Page extends StatelessWidget {
   const DiagnosisFear3Page({Key? key}) : super(key: key);
 

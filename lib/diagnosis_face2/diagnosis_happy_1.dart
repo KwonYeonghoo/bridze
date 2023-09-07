@@ -2,6 +2,7 @@ import 'package:bridze/diagnosis_face2/diagnosis_happy_2.dart';
 import 'package:bridze/widgets/audio_happy1.dart';
 import 'package:flutter/material.dart';
 
+//행복한 표정을 알려줍니다.
 class DiagnosisHappy1Page extends StatefulWidget {
   const DiagnosisHappy1Page({Key? key}) : super(key: key);
 
@@ -10,6 +11,7 @@ class DiagnosisHappy1Page extends StatefulWidget {
 }
 
 class _DiagnosisHappy1PageState extends State<DiagnosisHappy1Page> {
+  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioHappy1 myAudioPlayer = AudioHappy1();
 
   bool isPlaying = false;
@@ -20,8 +22,7 @@ class _DiagnosisHappy1PageState extends State<DiagnosisHappy1Page> {
     myAudioPlayer.initAudio().then((_) {
       setState(() {
         isPlaying = true;
-        myAudioPlayer
-            .toggleAudio(); // Start playing the audio when initialization is complete
+        myAudioPlayer.toggleAudio();
       });
     });
   }

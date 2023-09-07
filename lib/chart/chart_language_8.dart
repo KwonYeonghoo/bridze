@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+//언어 평가 차트 페이지 8세에서 10세
 class ChartApp3 extends StatelessWidget {
   const ChartApp3({Key? key}) : super(key: key);
 
@@ -66,6 +67,7 @@ class LanguagePage3State extends State<LanguagePage3> {
     });
   }
 
+//Evaluation을 계산하는 알고리즘
   void calculateEvaluation() {
     double score3 = double.tryParse(crrScore) ?? 0.0;
     if (score3 >= 100) {

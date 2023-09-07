@@ -10,6 +10,7 @@ class DiagnosisFear2Page extends StatefulWidget {
 }
 
 class _DiagnosisFear2PageState extends State<DiagnosisFear2Page> {
+  //페이지로 넘어오면 오디오가 재생되는 코드입니다.
   AudioFear1 myAudioPlayer = AudioFear1();
   bool isPlaying = false;
 
