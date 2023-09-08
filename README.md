@@ -190,6 +190,9 @@ notebook_login()
 
 ## 프론트엔드 개발 환경
 
+- <중요> 로그인의 아이디와 비밀번호는 다음과 같습니다 !
+아이디 : daitso
+비밀번호 : 1234
 - Dart 언어 기반의 Flutter
 - Flutter 설치 하기 : https://docs.flutter.dev/get-started/install
 - 코드 구동하기
