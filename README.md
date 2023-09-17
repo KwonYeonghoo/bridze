@@ -177,7 +177,8 @@ notebook_login()
   - OS: Ubuntu 22.04
   - Vga : geforce rtx4090
   - Ram : 64gb
-  - Cuda-version : 11.8
+  - CUDA-version : 11.8
+  - cuDNN-version : 8.9.4
   - 필요 라이브러리는 requirements.txt에 기록되어있습니다. cmd 프롬프트 명령어
     `pip install -r requirements.txt`
     로 필요 라이브러리를 설치할 수 있습니다.
