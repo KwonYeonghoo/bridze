@@ -154,7 +154,6 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
  ┃ ┗ 📂sad
  ┣ 📜Tgram.py
  ┣ 📜bridzecv.yaml
- ┣ 📜bridzecv.yaml
  ┣ 📜dataset.csv
  ┣ 📜facecrop.ipynb
  ┣ 📜inception-resnet-v2.ipynb
