@@ -70,7 +70,7 @@ class _DiagnosisFear1PageState extends State<DiagnosisFear1Page> {
                 ),
                 const SizedBox(height: 30),
                 const Text(
-                  "안녕 ! 나는 두려운 표정이야 !",
+                  "안녕 ! 나는 불안한 표정이야 !",
                   style: TextStyle(
                     fontSize: 40,
                     fontFamily: 'BMJUA',

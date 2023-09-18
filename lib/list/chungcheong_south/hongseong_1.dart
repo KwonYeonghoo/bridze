@@ -4,13 +4,13 @@ final List<Institution> hongseong1 = [
   Institution(
     name: '내포언어인지발달상담센터',
     phoneNumber: '041-633-5211',
-    imagePath: '',
+    imagePath: 'assets/images/hongseong1.png',
     address: '충남 홍성군 홍북읍 청사로 36 603-2호',
   ),
   Institution(
     name: '다온발달지원센터',
     phoneNumber: '041-633-1044',
-    imagePath: '',
+    imagePath: 'assets/images/hongseong2.png',
     address: '충남 홍성군 홍북읍 충남대로 50 1층 106호',
   ),
 ];
