@@ -45,7 +45,7 @@ BridZe는 정보 소외 대상자이자 디지털 소외 계층인 베트남 다
   : Inception-ResNet-v2 모델을 통해 표정을 분류하기 전에 Google의 Media pipe 기술로 얼굴 영역을 인식합니다.
 
 - Inception-ResNet-v2 (CV 모델)
-   - BridZe 서비스는 지속적인 검증체계를 거치고 기술 안전성을 위하여 지속적으로 더 좋은 성능의 기술을 구축해왔습니다. 2023년 9월 18일 기준, 기존 VGGnet 모델보다 성능이 좋은 모델이 구축되어 Inception-ResNet-V2로 변경하였습니다.
+   - BridZe 서비스는 지속적인 검증체계를 거치고 기술 안전성 확보를 위하여 지속적으로 더 좋은 성능의 기술을 구축해왔습니다. 2023년 9월 18일 기준, 기존 VGGnet 모델보다 성능이 좋은 모델이 구축되어 Inception-ResNet-V2로 변경하였습니다.
   - : 기존 Inception-ResNet-v2 모델은 외국인의 얼굴을 잘 인식하고 표정을 잘 분류했지만 비교적 이목구비가 뚜렷하지 않은 동양인의 얼굴은 잘 인식하지 못하는 모습을 보였습니다. 다문화가정 아동들은 한국인 부모님과 타국가의 부모님 사이에서 태어난 아동들이기에 Inception-ResNet-v2 모델이 동양인의 얼굴과 표정 역시 잘 인식할 수 있도록 추가학습을 진행하였습니다. 해당 모델은 BridZe 내 정서 평가의 표정 평가 및 분류에서 활용됩니다.
 
 ---
@@ -108,6 +108,32 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 - bridze_data는 이 [데이터셋](https://drive.google.com/drive/u/1/folders/11qAPKh_tbQM3x48KM_yYE1LZRKK_CNi3)을 다운받으시면 됩니다.
   - bridze data는 whisper모델에 투입하여 훈련할 수 있도록 가공이 완료된 데이터셋입니다.
 
+
+---
+
+# VGGnet 파일 트리 (Deprecated)
+
+```
+📦data_STT, CV
+ ┣ 📂CV_preprocessing
+ ┃ ┣ 📂dataset
+ ┃ ┣ 📂pre_dataset
+ ┃ ┣ 📜facecrop.ipynb
+ ┃ ┣ 📜readme.txt
+ ┃ ┗ 📜renaming.ipynb
+ ┣ 📂CV_train
+ ┃ ┣ 📂dataset
+ ┃ ┃ ┣ 📜angry_aaabsuecbeeyjrkcgjku.jpg
+ ┃ ┃ ┣ 📜angry_aaacuodmlyrbtkeqqnjmqbdwvonxbk.jpg
+             . . .
+ ┃ ┃ ┣ 📜sad_egllfut6ovrw44vxjhtmbsvd3gvwl6cam3g3fndyur.jpg
+ ┃ ┃ ┗ 📜sad_eglpay54klutwg28ugwggon1ivqmjam1dvirfuq4vq.jpg
+ ┃ ┣ 📜dataset.csv
+ ┃ ┣ 📜vggnet_trained.h5
+ ┃ ┣ 📜vggnet_trained.ipynb
+ ┃ ┗ 📜vggnet_up.h5
+
+```
 ---
 
 # Inception-ResNet-v2 파일 트리
@@ -166,12 +192,35 @@ notebook_login()
 
 ---
 
+## VGGnet 실행 환경 (Deprecated)
+
+- VGGnet 추가 학습 코드 : `CV_preprocessing 폴더 내의 코드들`
+  - 한글 파일명이 깨지므로 renaming으로 랜덤한 이름으로 변경합니다. 그 뒤 `face crop.ipynb`로 얼굴부분만 crop합니다.
+- VGGnet 추가 학습에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
+  - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 1만 데이터로 증강시켜 학습을 진행하였습니다.
+  - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
+- VGGnet 구동 환경 :
+  - os: Ubuntu 18.0.4
+  - vga : geforce rtx2080 super
+  - cuda 11.8
+  - 필요 라이브러리는 requirements.txt에 기록되어있습니다. cmd 프롬프트 명령어
+    `pip install -r requirements.txt`
+    로 필요 라이브러리를 설치할 수 있습니다.
+- VGGnet 사용 방법 (데이터 불러오기) :
+  - dataset.csv파일 내에 dataset폴더의 경로 및 jpg파일 명이 기록되어있습니다.
+  - dataset 폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
+  - 데이터양이 불균형할 경우 학습이 제대로 되지않으므로 upsamling을 통해 균형을 맞춰줍니다.
+  - vggnet모델의 checkpoint의 가중치는 vggnet_up.h5 파일로 최종 모델의 가중치는 vggnet_trained파일로 저장됩니다.
+  - 모델의 가중치는 플러터 환경으로 이동하고 촬영한 사진들을 가중치가 적용된 모델을 통해 추론하는 방식으로 진행됩니다.
+
+---
+
 ## Inception-ResNet-v2 실행 환경
 
 - 한글 파일명이 깨지므로 `renaming.ipynb`으로 랜덤한 이름으로 변경합니다. 그 뒤 `facecrop.ipynb`로 얼굴부분만 crop합니다.
 - [Imagenet](https://en.wikipedia.org/wiki/ImageNet)으로 사전학습된 모델을 가져와 전이학습과 파인튜닝을 진행하였습니다.
 - Inception-ResNet-v2 전이 학습에 사용된 데이터셋 : 한국인 감정인식을 위한 복합 영상의 이미지 데이터
-  - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 6만 데이터로 증강시켜 학습을 진행하였습니다.
+  - 해당 데이터를 활용하여 imblearn의 SMOTE 기법으로 각 감정별 7만 8천 데이터로 증강시켜 학습을 진행하였습니다.
   - 해당 데이터셋의 전체 버전은 [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 다운이 가능합니다.
 - 총 42만장의 한국인 얼굴 데이터 사진을 이용하여 학습을 진행하였습니다.
 - Inception-ResNet-v2 구동 환경 :
@@ -219,20 +268,20 @@ notebook_login()
 | -------------------------------- | ------ |
 | openai whisper                   | 80.7   |
 | BridZe fine tuned whisper        | 92.7   |
-| fer2013 데이터셋 vggnet          | 93.2   |
-| ai hub 데이터셋 vggnet (5만 ver)_2023.09.04 최종 선택 모델 | 77.1   |
+| fer2013 데이터셋 VGGnet          | 93.2   |
+| ai hub 데이터셋 VGGnet (5만 ver)_2023.09.04 최종 선택 모델 | 77.1   |
 | ai hub 데이터셋 Inception-ResNet-v2 (42만 ver)_2023.09.18 최종 선택 모델 | 79.9   |
 
 - openai whisper은 기존에 공개된 오픈 소스 코드의 정확도이며 BridZe fine tuned whisper은 저희 팀이 직접 fine tuning하여 목적에 맞게 새로이 구축된 모델의 정확도입니다.
-- vggnet 모델의 경우 정확도가 무의미합니다.
-  - vggnet 모델의 경우, 동일한 코드이더라도 사용하는 데이터셋에서 따라 정확도가 유동적입니다. 저희 팀이 직접 추가학습을 시킨 결과 Kaggle의 fer2013 인물 데이터로는 93.2의 정확도를 가진 모델이 구축되었으나 실시간으로 동양인의 얼굴 표정을 분류하고자 하였을 때 잘 분류되지 않는 모습을 보였습니다. 이에 따라 데이터셋을 ai hub의 한국인 감정인식을 위한 복합 영상 데이터셋으로 변경하였고 정확도는 fer2013 데이터보다 낮으나 실시간 얼굴 표정 분류에서는 훨씬 뛰어난 성능을 보여 ai hub 데이터셋 vggnet 모델로 최종 결정하였습니다. (2023년 9월 4일 기준)
+- VGGnet 모델의 경우 정확도가 무의미합니다.
+  - VGGnet 모델의 경우, 동일한 코드이더라도 사용하는 데이터셋에서 따라 정확도가 유동적입니다. 저희 팀이 직접 추가학습을 시킨 결과 Kaggle의 fer2013 인물 데이터로는 93.2의 정확도를 가진 모델이 구축되었으나 실시간으로 동양인의 얼굴 표정을 분류하고자 하였을 때 잘 분류되지 않는 모습을 보였습니다. 이에 따라 데이터셋을 ai hub의 한국인 감정인식을 위한 복합 영상 데이터셋으로 변경하였고 정확도는 fer2013 데이터보다 낮으나 실시간 얼굴 표정 분류에서는 훨씬 뛰어난 성능을 보여 ai hub 데이터셋 VGGnet 모델로 최종 결정하였습니다. (2023년 9월 4일 기준)
 
 ![image](https://github.com/BridZe/bridze/assets/89845380/1548aeae-e261-4711-bd79-299cd5b981e6)
 
 - 참고 : fer2013 데이터셋으로 학습시킨 결과화면의 캡처본입니다. 최종적으로 선정된 ai hub 데이터셋으로 학습시킨 결과는 아래 Vggnet 성능 결과에서 확인하실 수 있습니다.
 - fer2013 데이터셋은 [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013)에서 다운 가능합니다.
 
-- Inception-ResNet-v2 모델의 경우, 각 감정별 7만 8천 데이터로 추가학습을 진행하여 총 42만 데이터를 추가 학습시킨 모델입니다. 보다 많은 학습양으로 기존 vggnet 모델보다 전반적으로 높은 정확도를 보였으며 해당 모델로 최종 선정하게 되었습니다. (2023년 9월 18일 기준)
+- Inception-ResNet-v2 모델의 경우, 각 감정별 7만 8천 데이터로 추가학습을 진행하여 총 42만 데이터를 추가 학습시킨 모델입니다. 보다 많은 이미지 데이터 학습양으로 기존 VGGnet 모델보다 전반적으로 높은 정확도를 보였으며 해당 모델로 최종 선정하게 되었습니다. (2023년 9월 18일 기준)
 
 # whisper 성능 결과
 
@@ -248,7 +297,7 @@ notebook_login()
 - 4000스텝까지의 학습 중 check point를 통해 최고 성능의 3000스텝의 모델을 저장하였습니다.
 - 3000스텝에서의 loss 값이 0.18로 존재하나 과적합이라고 보기 어려운 미세한 loss값이며 새로운 test 데이터셋으로 확인한 결과 과적합이 일어나지 않는 모델임을 확인했습니다.
 
-# Vggnet 성능 결과 (Deprecated)
+# VGGnet 성능 결과 (Deprecated)
 
 ---
 
@@ -261,11 +310,11 @@ notebook_login()
 | 슬픔         | 80.3   |
 | 전체         | 77.1   |
 
-- Vggnet은 새로운 데이터셋으로 평가되는 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요하다는 전문가의 조언을 받아 수차례 실험을 진행하였습니다. 이는 최종적으로 선정된 모델의 성능 결과표입니다.
+- VGGnet은 새로운 데이터셋으로 평가되는 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요하다는 전문가의 조언을 받아 수차례 실험을 진행하였습니다. 이는 최종적으로 선정된 모델의 성능 결과표입니다.
 - 실시간 표정 분류의 정확성을 높이기 위하여 촬영된 영상의 표정을 0.5초마다 캡처하여 가장 높은 확률로 제시된 표정과 동일한 표정을 지은 사진을 표정 평가 및 분류에 활용하고 있습니다.
 
-  # Inception-ResNet-v2 성능 결과 (CV 최종 선정 모델 - 2023.09.18)
 
+# Inception-ResNet-v2 성능 결과 (CV 최종 선정 모델 - 2023.09.18)
   
 ---
 
@@ -278,7 +327,7 @@ notebook_login()
 | 슬픔         | 74.3   |
 | 전체         | 79.9   |
 
-- Vggnet과 동일하게 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요합니다. 해당 모델은 정확도의 숫자 뿐 아니라 실제 촬영 시 표정 분류에서도 2023.09.04에 최종 결정되었던 vggnet 모델보다 우수한 성능을 보였습니다. 이는 최종적으로 선정된 모델의 성능 결과표입니다.
+- VGGnet과 동일하게 정확도의 숫자보다는 실제 촬영 시 표정 분류 정확도가 더 중요합니다. 해당 모델은 정확도의 숫자 뿐 아니라 실제 촬영 시 표정 분류에서도 2023.09.04에 최종 결정되었던 VGGnet 모델보다 우수한 성능을 보였습니다. 이는 최종적으로 선정된 모델의 성능 결과표입니다.
 - 전체적인 정확도가 2.8% 기존 최종 모델보다 상승했습니다. 작은 수치로 느껴지실 수 있으나 큰 성능의 변화가 있어 해당 모델로 최종 변경하기로 결정하였습니다.
 - 실시간 표정 분류의 정확성을 높이기 위하여 촬영된 영상의 표정을 0.5초마다 캡처하여 가장 높은 확률로 제시된 표정과 동일한 표정을 지은 사진을 표정 평가 및 분류에 활용하고 있습니다.
   
