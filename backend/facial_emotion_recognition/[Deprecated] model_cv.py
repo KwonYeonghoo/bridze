@@ -1,12 +1,8 @@
-# 이 코드에서는 얼굴 감정 분석을 위한 Inception-ResNet-V2모델을 사용합니다.
-# 이미지에서 얼굴을 감지하고 크롭한 후 모델을 활용하여 감정을 예측합니다.
+# 이 코드에서는 얼굴 감정 분석을 위한 VGGNet 모델을 사용합니다.
+# mediapipe를 이용해 이미지에서 얼굴을 감지하고 크롭한 후 VGGNet 모델을 활용하여 감정을 예측합니다.
 # 여러 이미지 중에서 가장 빈도가 높은 감정을 추출합니다.
 # 해당 감정의 색상 및 텍스트를 이미지에 추가한 후, 별도 폴더에 저장합니다.
 
-#GPU관련 tensorflow 경고메시지 뜨지 않게 설정
-from silence_tensorflow import silence_tensorflow
-silence_tensorflow()
- 
 
 import numpy as np
 import cv2
@@ -14,20 +10,21 @@ import mediapipe as mp
 import os
 import glob
 import shutil
-# GPU 사용하지 않도록 환경 변수 설정
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 
 import tensorflow as tf
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Dropout, Flatten
-from tensorflow.keras.applications import InceptionResNetV2
-# 모든 GPU를 숨깁니다.
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers.experimental.preprocessing import Rescaling
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Dense, Dropout, Flatten
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.losses import categorical_crossentropy
+from tensorflow.keras.optimizers import Adam
 
 
 # 이미지 크롭 사이즈
-CROP_SIZE = (96,96)
+CROP_SIZE = (48,48)
 
+# GPU 사용하지 않도록 환경 변수 설정
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # 감정 카테고리 및 색상 설정
 emotions = {
@@ -39,45 +36,67 @@ emotions = {
 }
 num_classes = len(emotions)
 input_shape = CROP_SIZE+(1,)
-weights = '/workspace/wpqkf/facial_emotion_recognition/best_model.h5'
+
+# weights의 경우 vggnet_weight.h5 경로를 절대경로로 입력하세요
+weights = 'backend/facial_emotion_recognition/vggnet_weight.h5'
 
 
-# Inceptionn-ResNet-v2 모델 
-class EmotionClassifier:
-    def __init__(self, num_classes=num_classes, checkpoint_path=weights,input_shape = input_shape):
-        self.num_classes = num_classes
+class VGGNet(Sequential):
+    def __init__(self, input_shape, num_classes, checkpoint_path, lr=1e-3):
+        super().__init__()
+        self.add(Rescaling(1./255, input_shape=input_shape))
+        self.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_normal'))
+        self.add(BatchNormalization())
+        self.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(MaxPool2D())
+        self.add(Dropout(0.5))
+
+        self.add(Conv2D(128, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(Conv2D(128, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(MaxPool2D())
+        self.add(Dropout(0.4))
+
+        self.add(Conv2D(256, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(Conv2D(256, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(MaxPool2D())
+        self.add(Dropout(0.5))
+
+        self.add(Conv2D(512, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(Conv2D(512, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same'))
+        self.add(BatchNormalization())
+        self.add(MaxPool2D())
+        self.add(Dropout(0.4))
+
+        self.add(Flatten())
+
+        self.add(Dense(1024, activation='relu'))
+        self.add(Dropout(0.5))
+        self.add(Dense(256, activation='relu'))
+
+        self.add(Dense(num_classes, activation='softmax'))
+
+        self.compile(optimizer=Adam(learning_rate=lr),
+                    loss=categorical_crossentropy,
+                    metrics=['accuracy'])
+
         self.checkpoint_path = checkpoint_path
-        self.input_shape = input_shape
-        self.model = self.build_model()
-
-    def build_model(self):
-        base_model = InceptionResNetV2(weights=None, include_top=False, input_shape=self.input_shape)
-        x = Flatten()(base_model.output)
-        x = Dropout(0.2)(x)
-        x = Dense(512, activation='relu')(x)
-        x = Dropout(0.5)(x)
-        x = Dense(self.num_classes, activation='softmax')(x)
-        model = Model(inputs=base_model.input, outputs=x)
-        return model
-
-    def save(self):
-        self.model.save_weights(self.checkpoint_path)
-
-    def load(self):
-        self.model.load_weights(self.checkpoint_path)
-
-    def predict(self, input_data):
-        return self.model.predict(input_data)
 
 
-# Inceptionn-ResNet-v2 모델 초기화 및 가중치 로드
-emotion_classifier = EmotionClassifier(num_classes=num_classes, checkpoint_path=weights, input_shape = input_shape)
-emotion_classifier.load()
+# VGGNet 모델 초기화 및 가중치 로드
+model = VGGNet(input_shape = input_shape,num_classes = num_classes, checkpoint_path = weights)
+model.load_weights(model.checkpoint_path)
+
 
 # Mediapipe 모듈 초기화
 mp_face_detection = mp.solutions.face_detection
 mp_drawing = mp.solutions.drawing_utils
-face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.3)
+face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
 
 
 # 이미지 전처리
@@ -87,7 +106,7 @@ def detection_preprocessing(image, h_max=360):
     if h > h_max:
         ratio = h_max / h
         w_ = int(w * ratio)
-        image = cv2.resize(image, (w_, h_max))
+        image = cv2.resize(image, (w_,h_max))
     return image
 
 
@@ -101,78 +120,52 @@ def recognition_preprocessing(faces):
     return x
 
 
-def get_face_coordinates(detection, H, W):
-    """
-    감지된 얼굴 객체를 기반으로 얼굴 경계 상자의 좌표를 반환합니다.
-    
-    인자:
-    - detection: 감지된 얼굴 객체.
-    - H: 원본 이미지의 높이.
-    - W: 원본 이미지의 너비.
-    
-    반환값:
-    - x1, y1, x2, y2: 얼굴 경계 상자의 좌표.
-    """
-    box = detection.location_data.relative_bounding_box
-    x = int(box.xmin * W)
-    y = int(box.ymin * H)
-    w = int(box.width * W)
-    h = int(box.height * H)
-
-    x1 = max(0, x)
-    y1 = max(0, y)
-    x2 = min(x + w, W)
-    y2 = min(y + h, H)
-
-    return x1, y1, x2, y2
-
-def draw_emotion_on_image(image, pos, emotion_label, color, text_color):
-    """
-    주어진 이미지에 감지된 감정을 그립니다.
-
-    인자:
-    - image: 감정을 그릴 이미지.
-    - pos: 얼굴 경계 상자의 좌표.
-    - emotion_label: 감지된 감정의 라벨.
-    - color: 경계 상자의 색상.
-    - text_color: 텍스트 라벨의 색상.
-    """
-    cv2.rectangle(image, (pos[0], pos[1]), (pos[2], pos[3]), color, 2, lineType=cv2.LINE_AA)
-    cv2.rectangle(image, (pos[0], pos[1]-20), (pos[2]+20, pos[1]), color, -1, lineType=cv2.LINE_AA)
-    cv2.putText(image, emotion_label, (pos[0], pos[1]-5), 0, 0.6, text_color, 2, lineType=cv2.LINE_AA)
-
 def inference(image):
-    """
-    주어진 이미지를 처리하여 얼굴을 감지하고 해당 얼굴에 대한 감정을 예측한 후 이미지에 감정을 그립니다.
-
-    인자:
-    - image: 입력 이미지.
-
-    반환값:
-    - res_emotion: 감지된 얼굴의 감정.
-    """
     H, W, _ = image.shape
+
     rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = face_detection.process(rgb_image)
 
-    if not results.detections:
-        return None
+    if results.detections:
+        faces = []
+        pos = []
+        for detection in results.detections:
+            box = detection.location_data.relative_bounding_box
 
-    # 첫 번째 검출된 얼굴에 대한 좌표를 가져옵니다.
-    x1, y1, x2, y2 = get_face_coordinates(results.detections[0], H, W)
-    face = image[y1:y2, x1:x2]
-    face_gray = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
+            x = int(box.xmin * W)
+            y = int(box.ymin * H)
+            w = int(box.width * W)
+            h = int(box.height * H)
 
-    x = recognition_preprocessing([face_gray])
-    y_pred = emotion_classifier.predict(x)
-    emotion_index = np.argmax(y_pred, axis=1)
-    res_emotion = emotions[str(emotion_index[0])][0]
+            x1 = max(0, x)
+            y1 = max(0, y)
+            x2 = min(x + w, W)
+            y2 = min(y + h, H)
 
-    # 시각화
-    draw_emotion_on_image(image, (x1, y1, x2, y2), res_emotion, emotions[str(emotion_index[0])][1], emotions[str(emotion_index[0])][2])
+            face = image[y1:y2,x1:x2]
+            face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
+            faces.append(face)
+            pos.append((x1, y1, x2, y2))
 
-    return res_emotion
+        x = recognition_preprocessing(faces)
 
+        y = model.predict(x)
+        #가장 높은 감정 값의 index
+        l = np.argmax(y, axis=1)
+        res_emotion = emotions[str(l[0])][0]  
+
+        #박스 치고 감정 표시하는 코드 필요없을시 삭제
+        for i in range(1):
+            cv2.rectangle(image, (pos[i][0],pos[i][1]),
+                            (pos[i][2],pos[i][3]), emotions[str(l[i])][1], 2, lineType=cv2.LINE_AA)
+
+            cv2.rectangle(image, (pos[i][0],pos[i][1]-20),
+                            (pos[i][2]+20,pos[i][1]), emotions[str(l[i])][1], -1, lineType=cv2.LINE_AA)
+
+            cv2.putText(image, f'{emotions[str(l[i])][0]}', (pos[i][0],pos[i][1]-5),
+                            0, 0.6, emotions[str(l[i])][2], 2, lineType=cv2.LINE_AA)
+
+        return res_emotion
 
 
 def infer_multi_images(files):
@@ -181,7 +174,6 @@ def infer_multi_images(files):
         image = cv2.imread(path)
         image = detection_preprocessing(image)
         emotion = inference(image)
-        print(emotion)
         if emotion is None:continue
         cv2.imwrite(path,image)
         lst.append((path,emotion))
@@ -198,8 +190,8 @@ def delete_all_jpg_files(folder_path):
 # temp 이미지들의 감정 인식을 위한 함수
 # 가장 빈도수 높은 감정 및 이미지 추출
 def find_max_emotion(stage_name, arr):
-    source_folder_name = "/workspace/wpqkf/facial_emotion_recognition/temp/"
-    des_folder_name = "/workspace/wpqkf/facial_emotion_recognition/inference/"
+    source_folder_name = "backend/facial_emotion_recognition/temp"
+    des_folder_name = "backend/facial_emotion_recognition/inference"
     path_arr, emotion_arr = zip(*arr)
     path_arr = np.array(path_arr)
     emotion_arr = np.array(emotion_arr)
@@ -240,8 +232,8 @@ def find_max_emotion(stage_name, arr):
 # videos의 frame의 감정 인식을 위한 함수
 # 가장 빈도수 높은 감정 및 이미지 추출
 def find_max_emotion2(stage_name, arr):
-    source_folder_name2 = "/workspace/wpqkf/videos/frames/"
-    des_folder_name2 = "/workspace/wpqkf/videos"
+    source_folder_name2 = "backend/videos/frames"
+    des_folder_name2 = "backend/videos"
     path_arr, emotion_arr = zip(*arr)
     path_arr = np.array(path_arr)
     emotion_arr = np.array(emotion_arr)
