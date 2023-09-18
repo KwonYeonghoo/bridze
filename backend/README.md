@@ -18,8 +18,10 @@ backend
  ┃ ┃ ┃ ┗ picture.jpg
  ┃ ┃ ┗ sad
  ┃ ┃ ┃ ┗ picture.jpg
+ ┃ ┣ [Deprecated] model_cv.py
+ ┃ ┣ [Deprecated] vggnet_weight.h5
  ┃ ┣ model_cv.py
- ┃ ┗ vggnet_weight.h5
+ ┃ ┗ best_model.h5 (구글드라이브 링크 best_model_drive_link.txt 첨부)
  ┣ stt
  ┃ ┣ crr.py
  ┃ ┣ Jijeong.py
@@ -39,9 +41,8 @@ backend
 ## Bridze Backend 실행 방법
 
 **중요:** Bridze 프로젝트에 필요한 백엔드 웹 서버는 구름IDE의 '항상 켜두기' 기능을 이용하여 별도로 항상 실행 중입니다. 따라서 Bridze 프로젝트를 실행하기 위해 별도로 백엔드 서버를 실행하실 필요는 없습니다.
-- 구름 컨테이너 링크: https://goor.me/WWGQVkghsxv5sAL1A
 
-아래 방법은 로컬 컴퓨터에서 Bridze의 백엔드 서버 기능만 따로 실행하는 방법입니다. 직접 실행한 백엔드 서버를 Bridze의 프론트엔드와 연결하려면 프론트엔드 내부의 URL들을 실행시키신 서버 주소로 변경해야 합니다. 
+아래 방법은 Bridze의 백엔드 서버 기능만 따로 실행하는 방법입니다. 직접 실행한 백엔드 서버를 Bridze의 프론트엔드와 연결하려면 프론트엔드 내부의 URL들을 실행시키신 서버 주소로 변경해야 합니다. 
 (+ backend\facial_emotion_recognition\model_cv.py의 weights 경로를 절대 경로로 변경해야합니다.)
 
 ### 1. 깃 클론 이후 backend 폴더에 들어갑니다:
@@ -84,12 +85,12 @@ flask run
 
 - 알고리즘 실행 위치: `/backend/stt/crr.py`
 
-### 3. 얼굴 및 감정 인식 (Mediapipe + VGGNet)
+### 3. 얼굴 및 감정 인식 (Mediapipe + Inception-ResNet-v2)
 
- Mediapipe를 사용하여 얼굴을 감지하고, 학습된 VGGNet 모델을 활용하여 감지된 얼굴의 감정을 예측합니다.
+ Mediapipe를 사용하여 얼굴을 감지하고, 학습된 Inception-ResNet-v2 모델을 활용하여 감지된 얼굴의 감정을 예측합니다.
 
-- 학습 모델 파일: `/backend/facial_emotion_recognition/vggnet_weigt.h5`
-- 모델 실행 위치: `/backend/facial_emotion_recognition/model_cv.py`
+- 학습 모델 파일: `/backend/facial_emotion_recognition/best_model.h5`
+- 모델 실행 위치: `/bridze/backend/facial_emotion_recognition/model_cv.py`
 
 ### 4. 동영상 프레임 추출
 
