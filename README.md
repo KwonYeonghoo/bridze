@@ -111,7 +111,7 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
 
 ---
 
-# VGGnet 파일 트리 (Deprecated)
+# \[Deprecated\] VGGnet 파일 트리 
 
 ```
 📦data_STT, CV
@@ -175,26 +175,26 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
   - 설치 방법 참조 : https://pytorch.org/get-started/previous-versions/
 - Whisper 사용 방법 : 위 코드가 문제없이 끝까지 실행된다면, 저희 Hugging Face repository에 손실값과 cer오류율이 가장 작은 모델이 저장되고, API 형태로 언제든 불러서 쓸 수 있습니다.
 
-```
+```python
 pipe = pipeline(model="oceanstar/bridze")
 pipe(audio_file)['text']
 위와 같이 모델을 불러 사용할 수 있습니다.
 ```
 
 ### <중요> Whisper 실행시 주의사항
-
+```python
 from huggingface_hub import notebook_login
 
 notebook_login()
-
+```
 해당 코드 실행 시
 
-- 토큰 : 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
+- 토큰 : `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`
   - 이 토큰을 넣어야 저희가 fine tuning한 모델을 쓸 수 있습니다.
 
 ---
 
-## VGGnet 실행 환경 (Deprecated)
+## \[Deprecated\] VGGnet 실행 환경
 
 - VGGnet 추가 학습 코드 : `CV_preprocessing 폴더 내의 코드들`
   - 한글 파일명이 깨지므로 renaming으로 랜덤한 이름으로 변경합니다. 그 뒤 `face crop.ipynb`로 얼굴부분만 crop합니다.
@@ -233,7 +233,7 @@ notebook_login()
   - cuDNN-version : 8.9.4
   - 가상환경 라이브러리는 bridzecv.yaml에 기록 되어있습니다.
 
-```
+```bash
   conda env create -f bridzecv.yaml
 ```
 
