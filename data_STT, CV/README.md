@@ -4,7 +4,7 @@
 ---
 ## whisper
 
-```
+```python
 from huggingface_hub import notebook_login
 
 notebook_login()
@@ -22,7 +22,7 @@ notebook_login()
 - dataset, best_model.h5, pickle_jar는 용량이 커 구글드라이브 링크를 .txt파일로 첨부 하였습니다 각 경로에 있는 링크로 다운받으셔야 합니다.
 - 가상환경 라이브러리는 bridzecv.yaml에 기록 되어있습니다.
 
-```
+```bash
 conda env create -f bridzecv.yaml
 ```
 
