@@ -73,7 +73,7 @@ class _DiagnosisFear2PageState extends State<DiagnosisFear2Page> {
                       ),
                       const SizedBox(height: 30),
                       const Text(
-                        "두려운 표정을 지어봐 ~",
+                        "불안한 표정을 지어봐 ~",
                         style: TextStyle(
                           fontSize: 40,
                           fontFamily: 'BMJUA',

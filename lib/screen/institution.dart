@@ -125,6 +125,7 @@ import 'package:bridze/list/gyeongsang_south/gimhae_1.dart';
 import 'package:bridze/list/gyeongsang_south/gimhae_2.dart';
 import 'package:bridze/list/gyeongsang_south/hadong_2.dart';
 import 'package:bridze/list/gyeongsang_south/haman_1.dart';
+import 'package:bridze/list/gyeongsang_south/haman_2.dart';
 import 'package:bridze/list/gyeongsang_south/jinju_1.dart';
 import 'package:bridze/list/gyeongsang_south/jinju_2.dart';
 import 'package:bridze/list/gyeongsang_south/miryang_1.dart';
@@ -150,6 +151,23 @@ import 'package:bridze/list/jeolla_north/jeonju_2.dart';
 import 'package:bridze/list/jeolla_north/namwon_2.dart';
 import 'package:bridze/list/jeolla_north/sunchang_2.dart';
 import 'package:bridze/list/jeolla_north/wanju_1.dart';
+import 'package:bridze/list/jeolla_south/damyang_1.dart';
+import 'package:bridze/list/jeolla_south/gwangju_metro_1.dart';
+import 'package:bridze/list/jeolla_south/gwangju_metro_2.dart';
+import 'package:bridze/list/jeolla_south/gwangyang_1.dart';
+import 'package:bridze/list/jeolla_south/gwangyang_2.dart';
+import 'package:bridze/list/jeolla_south/haenam_1.dart';
+import 'package:bridze/list/jeolla_south/mokpo_1.dart';
+import 'package:bridze/list/jeolla_south/mokpo_2.dart';
+import 'package:bridze/list/jeolla_south/muan_1.dart';
+import 'package:bridze/list/jeolla_south/muan_2.dart';
+import 'package:bridze/list/jeolla_south/naju_1.dart';
+import 'package:bridze/list/jeolla_south/naju_2.dart';
+import 'package:bridze/list/jeolla_south/suncheon_1.dart';
+import 'package:bridze/list/jeolla_south/suncheon_2.dart';
+import 'package:bridze/list/jeolla_south/yeongam_2.dart';
+import 'package:bridze/list/jeolla_south/yeosu_1.dart';
+import 'package:bridze/list/jeolla_south/yeosu_2.dart';
 import 'package:bridze/list/seoul/dobong_1.dart';
 import 'package:bridze/list/seoul/dobong_2.dart';
 import 'package:bridze/list/seoul/dongdaemun_1.dart';
@@ -171,7 +189,7 @@ import 'package:bridze/list/gangwon/sokcho_2.dart';
 import 'package:bridze/list/gangwon/taebaek_1.dart';
 import 'package:bridze/list/gangwon/wonju_1.dart';
 import 'package:bridze/list/gangwon/wonju_2.dart';
-import 'package:bridze/list/gunsan_1.dart';
+import 'package:bridze/list/jeolla_north/gunsan_1.dart';
 import 'package:bridze/list/chungcheong_south/gongju_1.dart';
 import 'package:bridze/list/chungcheong_south/gongju_2.dart';
 import 'package:bridze/list/chungcheong_north/jecheon_1.dart';
@@ -213,7 +231,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:bridze/list/city.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../list/gunsan_2.dart';
+import '../list/jeolla_north/gunsan_2.dart';
 import '../list/seoul/seongdong_1.dart';
 
 class InstitutionRecommend extends StatefulWidget {
@@ -229,7 +247,7 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
 
   List<Widget> carouselItems = [];
 
-  Widget GunsanCarousel = CityCarousel(cities: gunsan);
+  Widget GunsanCarousel = CityCarousel(cities: gunsan1);
   Widget GunsanCarousel2 = CityCarousel(cities: gunsan2);
   Widget GangdongCarousel = CityCarousel(cities: gangdong1);
   Widget GangdongCarousel2 = CityCarousel(cities: gangdong2);
@@ -444,7 +462,24 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
   Widget ulsanCarousel = CityCarousel(cities: ulsan1);
   Widget ulsanCarousel2 = CityCarousel(cities: ulsan2);
   Widget yangsanCarousel = CityCarousel(cities: yangsan1);
-
+  Widget hamanCarousel2 = CityCarousel(cities: haman2);
+  Widget gwangjumetroCarousel = CityCarousel(cities: gwangjumetro1);
+  Widget gwangjumetroCarousel2 = CityCarousel(cities: gwangjumetro2);
+  Widget gwangyangCarousel = CityCarousel(cities: gwangyang1);
+  Widget gwangyangCarousel2 = CityCarousel(cities: gwangyang2);
+  Widget mokpoCarousel = CityCarousel(cities: mokpo1);
+  Widget mokpoCarousel2 = CityCarousel(cities: mokpo2);
+  Widget muanCarousel = CityCarousel(cities: muan1);
+  Widget muanCarousel2 = CityCarousel(cities: muan2);
+  Widget yeosuCarousel = CityCarousel(cities: yeosu1);
+  Widget yeosuCarousel2 = CityCarousel(cities: yeosu2);
+  Widget suncheonCarousel = CityCarousel(cities: suncheon1);
+  Widget suncheonCarousel2 = CityCarousel(cities: suncheon2);
+  Widget najuCarousel = CityCarousel(cities: naju1);
+  Widget najuCarousel2 = CityCarousel(cities: naju2);
+  Widget haenamCarousel = CityCarousel(cities: haenam1);
+  Widget damyangCarousel = CityCarousel(cities: damyang1);
+  Widget yeongamCarousel2 = CityCarousel(cities: yeongam2);
   String evaluation = '';
   String recommendation = '';
   String recommendation2 = '';
@@ -673,6 +708,20 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                             recommendation == '기관을 선택해주세요') &&
                         selectedCity == '횡성군')
                       HoengSeongCarousel2,
+                    if (selectedCity == '영암군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      const Center(
+                        child: Text(
+                            '영암군에는 언어 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '영암군')
+                      yeongamCarousel2,
                     if (selectedCity == '동해시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       DongHaeCarousel,
@@ -989,6 +1038,10 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                     if (selectedCity == '중랑구' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       JungnangCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '중랑구')
+                      JungnangCarousel2,
                     if (selectedCity == '마포구' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       MapoCarousel,
@@ -1290,6 +1343,87 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                               fontSize: 20,
                             )),
                       ),
+                    if (selectedCity == '신안군')
+                      const Center(
+                        child: Text(
+                            '신안군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '화순군')
+                      const Center(
+                        child: Text(
+                            '화순군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '장성군')
+                      const Center(
+                        child: Text(
+                            '장성군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '완도군')
+                      const Center(
+                        child: Text(
+                            '완도군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '강진군')
+                      const Center(
+                        child: Text(
+                            '강진군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '영양군')
+                      const Center(
+                        child: Text(
+                            '영양군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '창녕군')
+                      const Center(
+                        child: Text(
+                            '창녕군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '함양군')
+                      const Center(
+                        child: Text(
+                            '함양군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '고령군')
+                      const Center(
+                        child: Text(
+                            '고령군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
                     if (selectedCity == '금산군')
                       const Center(
                         child: Text(
@@ -1303,6 +1437,69 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       const Center(
                         child: Text(
                             '서천군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '곡성군')
+                      const Center(
+                        child: Text(
+                            '곡성군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '구례군')
+                      const Center(
+                        child: Text(
+                            '구례군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '고흥군')
+                      const Center(
+                        child: Text(
+                            '고흥군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '보성군')
+                      const Center(
+                        child: Text(
+                            '보성군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '장흥군')
+                      const Center(
+                        child: Text(
+                            '장흥군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '영광군')
+                      const Center(
+                        child: Text(
+                            '영광군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '진도군')
+                      const Center(
+                        child: Text(
+                            '진도군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
                             style: TextStyle(
                               fontFamily: 'BMJUA',
                               fontSize: 20,
@@ -1330,6 +1527,15 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       const Center(
                         child: Text(
                             '의령군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '함평군')
+                      const Center(
+                        child: Text(
+                            '함평군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
                             style: TextStyle(
                               fontFamily: 'BMJUA',
                               fontSize: 20,
@@ -1371,15 +1577,6 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                               fontSize: 20,
                             )),
                       ),
-                    if (selectedCity == '남해군')
-                      const Center(
-                        child: Text(
-                            '남해군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
-                            style: TextStyle(
-                              fontFamily: 'BMJUA',
-                              fontSize: 20,
-                            )),
-                      ),
                     if (selectedCity == '영동군')
                       const Center(
                         child: Text(
@@ -1405,12 +1602,12 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                             recommendation == '기관을 선택해주세요') &&
                         selectedCity == '이천시')
                       icheonCarousel2,
-                    if (selectedCity == '인천시' &&
+                    if (selectedCity == '인천광역시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       incheonCarousel,
                     if ((recommendation == '정서 기관 선택을 추천합니다!' ||
                             recommendation == '기관을 선택해주세요') &&
-                        selectedCity == '인천시')
+                        selectedCity == '인천광역시')
                       incheonCarousel2,
                     if (selectedCity == '평택시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
@@ -1879,7 +2076,7 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       busanCarousel,
                     if ((recommendation == '정서 기관 선택을 추천합니다!' ||
                             recommendation == '기관을 선택해주세요') &&
-                        selectedCity == '부산광역시시')
+                        selectedCity == '부산광역시')
                       busanCarousel2,
                     if (selectedCity == '창원시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
@@ -1902,11 +2099,11 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                             recommendation == '기관을 선택해주세요') &&
                         selectedCity == '김해시')
                       gimhaeCarousel2,
-                    if (selectedCity == '하동시' &&
+                    if (selectedCity == '하동군' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
                       const Center(
                         child: Text(
-                            '하동시에는 언어 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            '하동군에는 언어 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
                             style: TextStyle(
                               fontFamily: 'BMJUA',
                               fontSize: 20,
@@ -1914,7 +2111,7 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       ),
                     if ((recommendation == '정서 기관 선택을 추천합니다!' ||
                             recommendation == '기관을 선택해주세요') &&
-                        selectedCity == '하동시')
+                        selectedCity == '하동군')
                       hadongCarousel2,
                     if (selectedCity == '해남시' &&
                         recommendation == '언어 기관 선택을 추천합니다!')
@@ -1967,6 +2164,83 @@ class InstitutionRecommendState extends State<InstitutionRecommend> {
                       const Center(
                         child: Text(
                             '밀양시에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '광주광역시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      gwangjumetroCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '광주광역시')
+                      gwangjumetroCarousel2,
+                    if (selectedCity == '광양시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      gwangyangCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '광양시')
+                      gwangyangCarousel2,
+                    if (selectedCity == '목포시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      mokpoCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '목포시')
+                      mokpoCarousel2,
+                    if (selectedCity == '무안군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      muanCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '무안군')
+                      muanCarousel2,
+                    if (selectedCity == '여수시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      yeosuCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '여수시')
+                      yeosuCarousel2,
+                    if (selectedCity == '나주시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      najuCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '나주시')
+                      najuCarousel2,
+                    if (selectedCity == '순천시' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      suncheonCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '순천시')
+                      suncheonCarousel2,
+                    if (selectedCity == '해남군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      haenamCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '해남군')
+                      const Center(
+                        child: Text(
+                            '해남시에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
+                            style: TextStyle(
+                              fontFamily: 'BMJUA',
+                              fontSize: 20,
+                            )),
+                      ),
+                    if (selectedCity == '담양군' &&
+                        recommendation == '언어 기관 선택을 추천합니다!')
+                      damyangCarousel,
+                    if ((recommendation == '정서 기관 선택을 추천합니다!' ||
+                            recommendation == '기관을 선택해주세요') &&
+                        selectedCity == '담양군')
+                      const Center(
+                        child: Text(
+                            '담양군에는 교육 기관이 없습니다.\n다른 가까운 지역을 선택하여 추천받으시거나 비대면 프로그램 추천을 통해 전문가와 연결이 가능합니다 :)',
                             style: TextStyle(
                               fontFamily: 'BMJUA',
                               fontSize: 20,
