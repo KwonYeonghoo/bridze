@@ -154,6 +154,7 @@ fine tuning 과정의 검증이 필요하실 경우, 위 쪽의 전처리 코드
  ┃ ┗ 📂sad
  ┣ 📜Tgram.py
  ┣ 📜bridzecv.yaml
+ ┣ 📜bridzecv.yaml
  ┣ 📜dataset.csv
  ┣ 📜facecrop.ipynb
  ┣ 📜inception-resnet-v2.ipynb
@@ -234,7 +235,6 @@ notebook_login()
 
 ```
   conda env create -f bridzecv.yaml
-
 ```
 
 - 위 명령어로 필요 가상환경을 설치 할 수 있습니다.
