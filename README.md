@@ -229,9 +229,14 @@ notebook_login()
   - Ram : 64gb
   - CUDA-version : 11.8
   - cuDNN-version : 8.9.4
-  - 필요 라이브러리는 requirements.txt에 기록되어있습니다. cmd 프롬프트 명령어
-    `pip install -r requirements.txt`
-    로 필요 라이브러리를 설치할 수 있습니다.
+  - 가상환경 라이브러리는 bridzecv.yaml에 기록 되어있습니다.
+
+```
+  conda env create -f bridzecv.yaml
+
+```
+
+- 위 명령어로 필요 가상환경을 설치 할 수 있습니다.
 - Inception-ResNet-v2 사용 방법 (데이터 불러오기) :
   - dataset.csv파일 내에 dataset폴더의 경로 및 jpg파일 명이 기록되어있습니다.
   - dataset 폴더 내에 있는 jpg파일과 csv파일의 라벨링된 감정을 함께 불러옵니다.
