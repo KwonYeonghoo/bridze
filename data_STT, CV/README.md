@@ -1,5 +1,7 @@
 # **_중요_**
-
+## 공통
+- [ffmpeg](https://ffmpeg.org/)를 설치 하셔야 whisper와 cv 데모를 실행할 수 있습니다.
+---
 ## whisper
 
 ```
@@ -22,7 +24,6 @@ notebook_login()
 
 ```
 conda env create -f bridzecv.yaml
-
 ```
 
 - 위 명령어로 필요 가상환경을 설치 할 수 있습니다.
@@ -30,12 +31,12 @@ conda env create -f bridzecv.yaml
 - Tgram.py 는 텔레그램을 통해 훈련 중 에러나 완료를 텔레그램 봇으로 알립니다.
 
 - 실행순서는 다음과 같습니다.
-  - [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 pre_dataset 폴더에 감정별로 원본 파일 다운로드
-  - dataset/, pickle_jar/ , models/ 에 있는 구글 드라이브 링크를 통해 파일 다운로드
-  - bridzecv 가상환경 설치
-  - renaming.ipynb 실행 한글 파일명이 깨짐을 방지
-  - facecrop.ipynb 로 얼굴추출
+  1. [ai hub](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)에서 pre_dataset 폴더에 감정별로 원본 파일 다운로드
+  2. dataset/, pickle_jar/ , models/ 에 있는 구글 드라이브 링크를 통해 파일 다운로드
+  3. bridzecv 가상환경 설치
+  4. renaming.ipynb 실행 한글 파일명이 깨짐을 방지
+  5. facecrop.ipynb 로 얼굴추출
     - 추출이 완료된 데이터는 구글 드라이브 링크를 첨부하였습니다.
-  - inception-resnet-v2.ipynb 실행 후 모델 훈련 및 평가
+  6. inception-resnet-v2.ipynb 실행 후 모델 훈련 및 평가
     - 빠른 실행을 위해 이미지를 처리한 pickle 파일을 사용할 수 있습니다.
     - pickle_jar 폴더 내에 구글 드라이브 링크를 첨부하였습니다.
