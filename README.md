@@ -449,7 +449,7 @@ OpenCV를 사용하여 동영상 파일을 읽고 지정된 간격으로 프레�
 
 ## 서비스 흐름도 및 시스템 구성도
 
-![image](https://github.com/BridZe/bridze/assets/89845380/891b9549-15de-49c8-97bf-210d665812cc)
+![KakaoTalk_Photo_2023-09-21-17-34-47-1](https://github.com/BridZe/bridze/assets/89845380/e431b5b5-3d3b-4cb1-8f51-22bd8e5b19a7)
 
 ## 언어 평가 과정
 
