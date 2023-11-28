@@ -11,7 +11,7 @@ notebook_login()
 ```
 
 - 해당 코드 실행 시
-  - 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
+  - ----토큰 삭제----- 사용을 원할시 메일주세요
   - 이 토큰을 넣어야 저희가 finetuning한 모델을 쓸 수 있습니다
 
 ---
