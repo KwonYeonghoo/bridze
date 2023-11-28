@@ -4,8 +4,8 @@ import nest_asyncio
 import os
 nest_asyncio.apply()
 # Telegram Bot의 토큰과 대화 ID 설정
-TOKEN = "6441009419:AAGeU_ZUW6pxvqAOwIcIA8-PH8RLRPgb9rQ"
-CHAT_ID = "5862996909"
+TOKEN = "YOURTOKEN"
+CHAT_ID = "YOURCHAT_ID"
 
 
 class Tgram:
@@ -60,8 +60,8 @@ class Tgram:
 
 
 if __name__ == "__main__":
-    TOKEN = "6441009419:AAGeU_ZUW6pxvqAOwIcIA8-PH8RLRPgb9rQ"
-    CHAT_ID = "5862996909"
+    TOKEN = "YOURTOKEN"
+    CHAT_ID = "YOURCHAT_ID"
 
     tgram = Tgram(TOKEN, CHAT_ID)
     tgram.test()  
